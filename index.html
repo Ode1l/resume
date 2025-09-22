@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jiaheng Li — Resume</title>
     <style>
-        :root{ --bg:#0b0c0f; --card:#0f1116; --muted:#9aa4b2; --text:#e6e9ef; --accent:#60a5fa; }
+        :root{
+            --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --accent:#2563eb;
+        }
         body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui;}
         .container{max-width:900px;margin:0 auto;padding:32px 20px 64px;}
-        header{border-bottom:1px solid #1f2937;padding-bottom:16px;margin-bottom:20px;}
+        header{border-bottom:1px solid #cbd5e1;padding-bottom:16px;margin-bottom:20px;}
         h1{margin:0;font-size:28px;}
         h2{margin-top:28px;margin-bottom:10px;font-size:20px;}
         h3{margin-top:16px;margin-bottom:6px;font-size:16px;}
         .muted{color:var(--muted)}
         ul{margin:6px 0 12px 20px}
         li{margin:4px 0}
-        .btn{border:1px solid #334155;padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--text)}
+        .btn{border:1px solid var(--accent);padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--accent);background:#fff;cursor:pointer}
+        .btn:hover{background:var(--accent);color:#fff}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
+        @media print{
+            body{background:white;color:black}
+            .btn{display:none}
+        }
     </style>
 </head>
 <body>
@@ -27,6 +34,7 @@
         <div class="muted">1/473B Dominion Road, Mount Eden, Auckland 1024 · odell.lijiaheng@gmail.com · 0272959309</div>
         <div style="margin-top:10px">
             <button class="btn" id="langToggle">EN / 中文</button>
+            <button class="btn" onclick="window.print()"><span lang="en">Print / Save PDF</span><span lang="zh">打印 / 保存 PDF</span></button>
         </div>
     </header>
 
@@ -125,12 +133,17 @@
         const btn = document.getElementById('langToggle');
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
-        if(urlLang){html.setAttribute('lang', urlLang);localStorage.setItem('lang', urlLang);} else {
-            const saved = localStorage.getItem('lang');if(saved){html.setAttribute('lang', saved);}
+        if(urlLang){
+            html.setAttribute('lang', urlLang);
+            localStorage.setItem('lang', urlLang);
+        } else {
+            const saved = localStorage.getItem('lang');
+            if(saved){html.setAttribute('lang', saved);}
         }
         btn.addEventListener('click', ()=>{
             const next = html.getAttribute('lang')==='zh'?'en':'zh';
-            html.setAttribute('lang', next);localStorage.setItem('lang', next);
+            html.setAttribute('lang', next);
+            localStorage.setItem('lang', next);
         });
     })();
 </script>
