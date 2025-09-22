@@ -113,11 +113,13 @@
     </section>
 
     <footer>
-        © <span id="y"></span> Jiaheng Li
+        © <span id="y"></span> Jiaheng Li · <span lang="en">Last updated on</span><span lang="zh">最近更新：</span> <span id="d"></span>
     </footer>
 </div>
 <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    const d = new Date();
+    document.getElementById('y').textContent = d.getFullYear();
+    document.getElementById('d').textContent = d.toISOString().slice(0,10);
     (function(){
         const html = document.documentElement;
         const btn = document.getElementById('langToggle');
