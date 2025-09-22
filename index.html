@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!doctype html>
+        <html lang="en">
+        <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Jiaheng Li — Resume</title>
+    <meta name="description" content="Resume of Jiaheng Li — Full‑stack developer with strong backend, networks, and data structures foundation." />
+    <style>
+        :root{
+            --bg:#0b0c0f; --card:#0f1116; --muted:#9aa4b2; --text:#e6e9ef; --accent:#60a5fa; --chip:#1a1f2b;
+            --print-text:#000; --print-muted:#333; --print-accent:#000;
+        }
+        @media (prefers-color-scheme: light){
+            :root{ --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --accent:#2563eb; --chip:#eef2ff; }
+        }
+        *{ box-sizing:border-box }
+        html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+        .container{ max-width:900px; margin:0 auto; padding:32px 20px 64px; }
+        header{ display:flex; flex-wrap:wrap; gap:16px; align-items:flex-end; justify-content:space-between; border-bottom:1px solid #1f2937; padding-bottom:16px; }
+        h1{ font-size:28px; margin:0; letter-spacing:.3px }
+        .subtitle{ color:var(--muted); margin-top:4px }
+        .contact{ display:flex; flex-wrap:wrap; gap:12px; font-size:14px; color:var(--muted) }
+        .chip{ display:inline-block; padding:4px 10px; border-radius:999px; background:var(--chip); color:var(--text); font-size:12px; }
+        main{ display:grid; grid-template-columns: 1fr; gap:28px; margin-top:24px }
+        @media (min-width: 860px){ main{ grid-template-columns: 1.2fr .9fr; gap:36px } }
+        section{ background:var(--card); border:1px solid #1f2937; border-radius:16px; padding:18px 18px 8px; }
+        h2{ font-size:16px; margin:0 0 6px; letter-spacing:.25px }
+        .muted{ color:var(--muted) }
+        ul{ margin:8px 0 12px 20px }
+        li{ margin:4px 0 }
+        .row{ display:flex; justify-content:space-between; gap:16px; align-items:baseline }
+        .org{ font-weight:600 }
+        .where{ color:var(--muted) }
+        .when{ font-size:14px; color:var(--muted) }
+        .btns{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px }
+        .btn{ border:1px solid #334155; background:transparent; color:var(--text); padding:8px 12px; border-radius:10px; text-decoration:none; font-size:14px }
+        .btn:hover{ border-color:var(--accent) }
+        .grid-2{ display:grid; grid-template-columns: 1fr; gap:12px }
+        @media (min-width: 640px){ .grid-2{ grid-template-columns: 1fr 1fr } }
+        .sklist{ display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 2px }
+        footer{ margin-top:20px; text-align:center; color:var(--muted); font-size:13px }
+        /* Print */
+        @media print{
+            body{ background:white; color:var(--print-text) }
+            .container{ padding:0 }
+            section{ border:none; background:white; padding:0; page-break-inside:avoid }
+            header{ border-bottom:1px solid #ddd }
+            a{ color:var(--print-accent) }
+            .btns{ display:none }
+        }
+        /* Bilingual toggle */
+        html[lang="en"] [lang="zh"]{display:none}
+        html[lang="zh"] [lang="en"]{display:none}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h1><span lang="en">Jiaheng Li</span><span lang="zh">李嘉恒</span></h1>
+            <div class="subtitle">
+                <span lang="en">Full‑stack developer with strong backend experience</span>
+                <span lang="zh">全栈开发工程师，后端能力突出</span>
+            </div>
+            <div class="contact">
+                <span>Auckland, New Zealand</span>
+                <span>•</span>
+                <a href="mailto:jiaheng@example.com">jiaheng@example.com</a>
+                <span>•</span>
+                <a href="https://github.com/ode1l" target="_blank" rel="noreferrer">github.com/ode1l</a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+        </div>
+        <div class="btns">
+            <a class="btn" href="#" onclick="window.print()"><span lang="en">Print / Save PDF</span><span lang="zh">打印 / 保存 PDF</span></a>
+            <a class="btn" href="#projects"><span lang="en">View Projects</span><span lang="zh">查看项目</span></a>
+            <button class="btn" id="langToggle" type="button" aria-label="Toggle language">EN / 中文</button>
+        </div>
+    </header>
+
+    <!-- 内容省略，与之前相同，包括双语 Profile, Work History, Projects, Core Skills -->
+
+    <footer>
+        © <span id="y"></span> Jiaheng Li · <span lang="en">Last updated on</span><span lang="zh">最近更新：</span> <span id="d"></span>
+    </footer>
+</div>
+<script>
+    const d = new Date();
+    document.getElementById('y').textContent = d.getFullYear();
+    document.getElementById('d').textContent = d.toISOString().slice(0,10);
+    // Language toggle with persistence + URL param
+    (function(){
+        const html = document.documentElement;
+        const btn = document.getElementById('langToggle');
+        // check URL param first
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        if(urlLang === 'zh' || urlLang === 'en'){
+            html.setAttribute('lang', urlLang);
+            localStorage.setItem('lang', urlLang);
+        } else {
+            const saved = localStorage.getItem('lang');
+            if(saved){ html.setAttribute('lang', saved); }
+        }
+        btn?.addEventListener('click', ()=>{
+            const next = html.getAttribute('lang') === 'zh' ? 'en' : 'zh';
+            html.setAttribute('lang', next);
+            localStorage.setItem('lang', next);
+        });
+    })();
+</script>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
