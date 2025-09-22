@@ -1,58 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title><!doctype html>
-        <html lang="en">
-        <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Jiaheng Li — Resume</title>
-    <meta name="description" content="Resume of Jiaheng Li — Full‑stack developer with strong backend, networks, and data structures foundation." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jiaheng Li — Resume</title>
     <style>
-        :root{
-            --bg:#0b0c0f; --card:#0f1116; --muted:#9aa4b2; --text:#e6e9ef; --accent:#60a5fa; --chip:#1a1f2b;
-            --print-text:#000; --print-muted:#333; --print-accent:#000;
-        }
-        @media (prefers-color-scheme: light){
-            :root{ --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --accent:#2563eb; --chip:#eef2ff; }
-        }
-        *{ box-sizing:border-box }
-        html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
-        .container{ max-width:900px; margin:0 auto; padding:32px 20px 64px; }
-        header{ display:flex; flex-wrap:wrap; gap:16px; align-items:flex-end; justify-content:space-between; border-bottom:1px solid #1f2937; padding-bottom:16px; }
-        h1{ font-size:28px; margin:0; letter-spacing:.3px }
-        .subtitle{ color:var(--muted); margin-top:4px }
-        .contact{ display:flex; flex-wrap:wrap; gap:12px; font-size:14px; color:var(--muted) }
-        .chip{ display:inline-block; padding:4px 10px; border-radius:999px; background:var(--chip); color:var(--text); font-size:12px; }
-        main{ display:grid; grid-template-columns: 1fr; gap:28px; margin-top:24px }
-        @media (min-width: 860px){ main{ grid-template-columns: 1.2fr .9fr; gap:36px } }
-        section{ background:var(--card); border:1px solid #1f2937; border-radius:16px; padding:18px 18px 8px; }
-        h2{ font-size:16px; margin:0 0 6px; letter-spacing:.25px }
-        .muted{ color:var(--muted) }
-        ul{ margin:8px 0 12px 20px }
-        li{ margin:4px 0 }
-        .row{ display:flex; justify-content:space-between; gap:16px; align-items:baseline }
-        .org{ font-weight:600 }
-        .where{ color:var(--muted) }
-        .when{ font-size:14px; color:var(--muted) }
-        .btns{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px }
-        .btn{ border:1px solid #334155; background:transparent; color:var(--text); padding:8px 12px; border-radius:10px; text-decoration:none; font-size:14px }
-        .btn:hover{ border-color:var(--accent) }
-        .grid-2{ display:grid; grid-template-columns: 1fr; gap:12px }
-        @media (min-width: 640px){ .grid-2{ grid-template-columns: 1fr 1fr } }
-        .sklist{ display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 2px }
-        footer{ margin-top:20px; text-align:center; color:var(--muted); font-size:13px }
-        /* Print */
-        @media print{
-            body{ background:white; color:var(--print-text) }
-            .container{ padding:0 }
-            section{ border:none; background:white; padding:0; page-break-inside:avoid }
-            header{ border-bottom:1px solid #ddd }
-            a{ color:var(--print-accent) }
-            .btns{ display:none }
-        }
-        /* Bilingual toggle */
+        :root{ --bg:#0b0c0f; --card:#0f1116; --muted:#9aa4b2; --text:#e6e9ef; --accent:#60a5fa; }
+        body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui;}
+        .container{max-width:900px;margin:0 auto;padding:32px 20px 64px;}
+        header{border-bottom:1px solid #1f2937;padding-bottom:16px;margin-bottom:20px;}
+        h1{margin:0;font-size:28px;}
+        h2{margin-top:28px;margin-bottom:10px;font-size:20px;}
+        h3{margin-top:16px;margin-bottom:6px;font-size:16px;}
+        .muted{color:var(--muted)}
+        ul{margin:6px 0 12px 20px}
+        li{margin:4px 0}
+        .btn{border:1px solid #334155;padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--text)}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
     </style>
@@ -60,57 +23,112 @@
 <body>
 <div class="container">
     <header>
-        <div>
-            <h1><span lang="en">Jiaheng Li</span><span lang="zh">李嘉恒</span></h1>
-            <div class="subtitle">
-                <span lang="en">Full‑stack developer with strong backend experience</span>
-                <span lang="zh">全栈开发工程师，后端能力突出</span>
-            </div>
-            <div class="contact">
-                <span>Auckland, New Zealand</span>
-                <span>•</span>
-                <a href="mailto:jiaheng@example.com">jiaheng@example.com</a>
-                <span>•</span>
-                <a href="https://github.com/ode1l" target="_blank" rel="noreferrer">github.com/ode1l</a>
-                <span>•</span>
-                <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-        </div>
-        <div class="btns">
-            <a class="btn" href="#" onclick="window.print()"><span lang="en">Print / Save PDF</span><span lang="zh">打印 / 保存 PDF</span></a>
-            <a class="btn" href="#projects"><span lang="en">View Projects</span><span lang="zh">查看项目</span></a>
-            <button class="btn" id="langToggle" type="button" aria-label="Toggle language">EN / 中文</button>
+        <h1><span lang="en">JIAHENG LI</span><span lang="zh">李嘉恒</span></h1>
+        <div class="muted">1/473B Dominion Road, Mount Eden, Auckland 1024 · odell.lijiaheng@gmail.com · 0272959309</div>
+        <div style="margin-top:10px">
+            <button class="btn" id="langToggle">EN / 中文</button>
         </div>
     </header>
 
-    <!-- 内容省略，与之前相同，包括双语 Profile, Work History, Projects, Core Skills -->
+    <section>
+        <h2><span lang="en">Objective</span><span lang="zh">求职目标</span></h2>
+        <p><span lang="en">Seeking a software developer position to leverage expertise in full stack development, problem-solving skills, and passion for creating efficient and scalable applications.</span><span lang="zh">寻求软件开发职位，以发挥全栈开发专长、问题解决能力，以及对构建高效且可扩展应用的热情。</span></p>
+    </section>
+
+    <section>
+        <h2><span lang="en">Personal Statement</span><span lang="zh">个人简介</span></h2>
+        <p><span lang="en">Possesses a solid foundation in computer networks and data structures, enabling the development of efficient, scalable, and secure systems.</span><span lang="zh">具备扎实的计算机网络和数据结构基础，能够开发高效、可扩展且安全的系统。</span></p>
+    </section>
+
+    <section>
+        <h2><span lang="en">Qualifications</span><span lang="zh">教育背景</span></h2>
+        <ul>
+            <li><span lang="en">The University of Auckland, Master of Information Technology, Jul 2024 – Present</span><span lang="zh">奥克兰大学，信息技术硕士，2024年7月至今</span></li>
+            <li><span lang="en">The Henan University, Bachelor of Network Engineering, Sep 2018 – Jun 2022</span><span lang="zh">河南大学，网络工程学士，2018年9月至2022年6月</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span lang="en">Work History</span><span lang="zh">工作经历</span></h2>
+        <h3>Skyline Consulting Engineers Limited · <span lang="en">Full-stack Software Developer Intern</span><span lang="zh">全栈软件开发实习生</span> · Jul 2024 – Present</h3>
+        <ul>
+            <li><span lang="en">Spearheading the transformation of SP1 structural calculation books using Python, React, and Excel.</span><span lang="zh">主导将传统 SP1 结构计算书转化为现代化软件系统，使用 Python、React 和 Excel 技术。</span></li>
+            <li><span lang="en">Designed backend APIs to automate structural calculations with Excel compatibility.</span><span lang="zh">设计并实现后端 API 以自动化结构计算，同时保持与 Excel 的兼容。</span></li>
+            <li><span lang="en">Enhanced scalability and cross-platform usability, improving visualization workflows.</span><span lang="zh">提升系统的可扩展性与跨平台可用性，改进可视化工作流程。</span></li>
+            <li><span lang="en">Optimized data handling and reduced manual workload for engineers.</span><span lang="zh">优化数据处理流程，减少工程师的手工工作量。</span></li>
+        </ul>
+
+        <h3>Freelance Project · <span lang="en">Full-stack Contract Project</span><span lang="zh">全栈自由职业项目</span> · Aug 2024 – Sep 2024</h3>
+        <ul>
+            <li><span lang="en">Built an advertising portal website using React for a renovation company.</span><span lang="zh">为一家装修公司开发广告门户网站，使用 React 技术。</span></li>
+            <li><span lang="en">Delivered responsive UI/UX and seamless client handover.</span><span lang="zh">交付响应式 UI/UX，并完成客户无缝交接。</span></li>
+        </ul>
+
+        <h3>Optimal Drainage & Traffic Services Limited · IT Support · Jun 2024 – Dec 2024</h3>
+        <ul>
+            <li><span lang="en">Investigated IT infringement cases.</span><span lang="zh">调查 IT 相关侵权案件。</span></li>
+            <li><span lang="en">Led data recovery using web scraping and OCR.</span><span lang="zh">主导数据恢复，采用网页爬虫与 OCR 技术。</span></li>
+        </ul>
+
+        <h3>Yonyou Network Technology Co., Ltd. · Junior Backend Developer · Mar 2022 – Dec 2023</h3>
+        <ul>
+            <li><span lang="en">Developed login interface with Spring Boot and RestTemplate.</span><span lang="zh">使用 Spring Boot 与 RestTemplate 开发登录接口。</span></li>
+            <li><span lang="en">Optimized concurrent processing with MyBatis and scheduled tasks.</span><span lang="zh">利用 MyBatis 与定时任务优化并发处理性能。</span></li>
+            <li><span lang="en">Implemented AOP-based upgrades by reverse engineering.</span><span lang="zh">通过逆向工程实现基于 AOP 的功能升级。</span></li>
+            <li><span lang="en">Analyzed source code with Jadx for debugging.</span><span lang="zh">使用 Jadx 分析源码以进行调试与改进。</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span lang="en">Technical Skills</span><span lang="zh">技术技能</span></h2>
+        <ul>
+            <li><span lang="en">Backend Development: Java (Spring Boot, Spring MVC), C# (.NET Core, ASP.NET)</span><span lang="zh">后端开发：Java（Spring Boot, Spring MVC）、C#（.NET Core, ASP.NET）</span></li>
+            <li><span lang="en">Frontend Development: React.js, HTML, CSS, JavaScript</span><span lang="zh">前端开发：React.js、HTML、CSS、JavaScript</span></li>
+            <li><span lang="en">Database Management: MyBatis, SQL</span><span lang="zh">数据库管理：MyBatis、SQL</span></li>
+            <li><span lang="en">Artificial Intelligence: Machine Learning, Neural networks, Random forests, Regression, Clustering, Decision trees</span><span lang="zh">人工智能：机器学习、神经网络、随机森林、回归、聚类、决策树</span></li>
+            <li><span lang="en">Servers: Linux, Windows Server</span><span lang="zh">服务器：Linux、Windows Server</span></li>
+            <li><span lang="en">Algorithms & Data Structures: Trees, Graphs, Sorting, Searching</span><span lang="zh">算法与数据结构：树、图、排序、搜索算法</span></li>
+            <li><span lang="en">Networking & Security: TLS/SSL, Cisco, X.509 certificate, Cybersecurity</span><span lang="zh">网络与安全：TLS/SSL、思科、X.509 证书、网络安全</span></li>
+            <li><span lang="en">Automation & Web Scraping: Python (Scrapy, Selenium, BeautifulSoup), OCR, JWT</span><span lang="zh">自动化与爬虫：Python（Scrapy, Selenium, BeautifulSoup）、OCR、JWT</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span lang="en">Personal Skills</span><span lang="zh">个人技能</span></h2>
+        <ul>
+            <li><span lang="en">Language Skills: English (Proficient), Mandarin (Native)</span><span lang="zh">语言能力：英语（熟练）、中文（母语）</span></li>
+            <li><span lang="en">Critical Thinking: Flexible use of logic</span><span lang="zh">批判性思维：灵活运用逻辑思考</span></li>
+            <li><span lang="en">Time Management & Organizational Skills: Proficient in planning and prioritization</span><span lang="zh">时间管理与组织能力：擅长计划与优先级排序</span></li>
+            <li><span lang="en">Communication: Effective with teams, stakeholders, non-technical audiences</span><span lang="zh">沟通能力：能与团队、利益相关者及非技术人员高效沟通</span></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><span lang="en">Achievements</span><span lang="zh">成就</span></h2>
+        <ul>
+            <li><span lang="en">2024-COMPSCI 742 Advanced Internet: Global Data Communications A</span><span lang="zh">2024-COMPSCI 742 高级互联网：全球数据通信 A</span></li>
+            <li><span lang="en">2024-COMPSCI 726 Network Defence and Countermeasures A-</span><span lang="zh">2024-COMPSCI 726 网络防御与对策 A-</span></li>
+            <li><span lang="en">2024-COMPSCI 706 Health Data Analytics A-</span><span lang="zh">2024-COMPSCI 706 健康数据分析 A-</span></li>
+        </ul>
+    </section>
 
     <footer>
-        © <span id="y"></span> Jiaheng Li · <span lang="en">Last updated on</span><span lang="zh">最近更新：</span> <span id="d"></span>
+        © <span id="y"></span> Jiaheng Li
     </footer>
 </div>
 <script>
-    const d = new Date();
-    document.getElementById('y').textContent = d.getFullYear();
-    document.getElementById('d').textContent = d.toISOString().slice(0,10);
-    // Language toggle with persistence + URL param
+    document.getElementById('y').textContent = new Date().getFullYear();
     (function(){
         const html = document.documentElement;
         const btn = document.getElementById('langToggle');
-        // check URL param first
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
-        if(urlLang === 'zh' || urlLang === 'en'){
-            html.setAttribute('lang', urlLang);
-            localStorage.setItem('lang', urlLang);
-        } else {
-            const saved = localStorage.getItem('lang');
-            if(saved){ html.setAttribute('lang', saved); }
+        if(urlLang){html.setAttribute('lang', urlLang);localStorage.setItem('lang', urlLang);} else {
+            const saved = localStorage.getItem('lang');if(saved){html.setAttribute('lang', saved);}
         }
-        btn?.addEventListener('click', ()=>{
-            const next = html.getAttribute('lang') === 'zh' ? 'en' : 'zh';
-            html.setAttribute('lang', next);
-            localStorage.setItem('lang', next);
+        btn.addEventListener('click', ()=>{
+            const next = html.getAttribute('lang')==='zh'?'en':'zh';
+            html.setAttribute('lang', next);localStorage.setItem('lang', next);
         });
     })();
 </script>
