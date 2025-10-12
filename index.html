@@ -8,10 +8,10 @@
         :root{
             --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --accent:#2563eb;
         }
-        body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui;}
+        body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;}
         .container{max-width:900px;margin:0 auto;padding:32px 20px 64px;}
         header{border-bottom:1px solid #cbd5e1;padding-bottom:16px;margin-bottom:20px;}
-        h1{margin:0;font-size:28px;}
+        h1{margin:0;font-size:28px;letter-spacing:.5px}
         h2{margin-top:28px;margin-bottom:10px;font-size:20px;}
         h3{margin-top:16px;margin-bottom:6px;font-size:16px;}
         .muted{color:var(--muted)}
@@ -23,7 +23,9 @@
         html[lang="zh"] [lang="en"]{display:none}
         @media print{
             body{background:white;color:black}
+            header{border-bottom:0;margin-bottom:8px;padding-bottom:0}
             .btn{display:none}
+            a{color:black;text-decoration:none}
         }
     </style>
 </head>
@@ -40,85 +42,201 @@
 
     <section>
         <h2><span lang="en">Objective</span><span lang="zh">求职目标</span></h2>
-        <p><span lang="en">Seeking a software developer position to leverage expertise in full stack development, problem-solving skills, and passion for creating efficient and scalable applications.</span><span lang="zh">寻求软件开发职位，以发挥全栈开发专长、问题解决能力，以及对构建高效且可扩展应用的热情。</span></p>
+        <p>
+            <span lang="en">Seeking a software developer position to leverage my expertise in full stack development, problem-solving skills, and passion for creating efficient and scalable applications.</span>
+            <span lang="zh">寻求软件开发职位，以发挥全栈开发专长、问题解决能力，以及对构建高效且可扩展应用的热情。</span>
+        </p>
     </section>
 
     <section>
         <h2><span lang="en">Personal Statement</span><span lang="zh">个人简介</span></h2>
-        <p><span lang="en">Possesses a solid foundation in computer networks and data structures, enabling the development of efficient, scalable, and secure systems.</span><span lang="zh">具备扎实的计算机网络和数据结构基础，能够开发高效、可扩展且安全的系统。</span></p>
+        <p>
+            <span lang="en">Possesses a solid foundation in computer networks and data structures, enabling the development of efficient, scalable, and secure systems.</span>
+            <span lang="zh">具备扎实的计算机网络和数据结构基础，能够开发高效、可扩展且安全的系统。</span>
+        </p>
     </section>
 
     <section>
         <h2><span lang="en">Qualifications</span><span lang="zh">教育背景</span></h2>
         <ul>
-            <li><span lang="en">The University of Auckland, Master of Information Technology, Jul 2024 – Present</span><span lang="zh">奥克兰大学，信息技术硕士，2024年7月至今</span></li>
-            <li><span lang="en">The Henan University, Bachelor of Network Engineering, Sep 2018 – Jun 2022</span><span lang="zh">河南大学，网络工程学士，2018年9月至2022年6月</span></li>
+            <li>
+                <span lang="en">The University of Auckland, Master of Information Technology, Jul 2024 – Present</span>
+                <span lang="zh">奥克兰大学，信息技术硕士，2024年7月至今</span>
+            </li>
+            <li>
+                <span lang="en">The Henan University, Bachelor of Network Engineering, Sep 2018 – Jun 2022</span>
+                <span lang="zh">河南大学，网络工程学士，2018年9月至2022年6月</span>
+            </li>
         </ul>
     </section>
 
     <section>
         <h2><span lang="en">Work History</span><span lang="zh">工作经历</span></h2>
-        <h3>Skyline Consulting Engineers Limited · <span lang="en">Full-stack Software Developer Intern</span><span lang="zh">全栈软件开发实习生</span> · Jul 2024 – Present</h3>
+
+        <h3>
+            Skyline Consulting Engineers Limited ·
+            <span lang="en">Full-stack Software Developer Intern</span><span lang="zh">全栈软件开发实习生</span>
+            · Jul 2024 – Present · <span class="muted">Auckland, New Zealand</span>
+        </h3>
         <ul>
-            <li><span lang="en">Spearheading the transformation of SP1 structural calculation books using Python, React, and Excel.</span><span lang="zh">主导将传统 SP1 结构计算书转化为现代化软件系统，使用 Python、React 和 Excel 技术。</span></li>
-            <li><span lang="en">Designed backend APIs to automate structural calculations with Excel compatibility.</span><span lang="zh">设计并实现后端 API 以自动化结构计算，同时保持与 Excel 的兼容。</span></li>
-            <li><span lang="en">Enhanced scalability and cross-platform usability, improving visualization workflows.</span><span lang="zh">提升系统的可扩展性与跨平台可用性，改进可视化工作流程。</span></li>
-            <li><span lang="en">Optimized data handling and reduced manual workload for engineers.</span><span lang="zh">优化数据处理流程，减少工程师的手工工作量。</span></li>
+            <li>
+                <span lang="en">Spearheading the transformation of traditional SP1 structural calculation books into a modernized software system by integrating Python, React, and Excel-based technologies.</span>
+                <span lang="zh">主导将传统 SP1 结构计算书转化为现代化软件系统，集成 Python、React 与 Excel 技术。</span>
+            </li>
+            <li>
+                <span lang="en">Designed and implemented backend APIs to automate structural calculations while maintaining Excel compatibility for smooth team adoption.</span>
+                <span lang="zh">设计并实现后端 API 以自动化结构计算，同时保持与 Excel 的兼容，便于团队采用。</span>
+            </li>
+            <li>
+                <span lang="en">Enhanced system scalability and cross-platform usability to support engineers working across devices and environments.</span>
+                <span lang="zh">提升系统可扩展性与跨平台可用性，支持工程师在多设备与多环境下工作。</span>
+            </li>
+            <li>
+                <span lang="en">Optimized data handling and visualization workflows, improving accuracy and reducing manual workload.</span>
+                <span lang="zh">优化数据处理与可视化流程，提高准确性并减少人工工作量。</span>
+            </li>
         </ul>
 
-        <h3>Freelance Project · <span lang="en">Full-stack Contract Project</span><span lang="zh">全栈自由职业项目</span> · Aug 2024 – Sep 2024</h3>
+        <h3>
+            Freelance Project ·
+            <span lang="en">Full-stack Contract Project</span><span lang="zh">全栈自由职业项目</span>
+            · Aug 2024 – Sep 2024 · <span class="muted">Auckland, New Zealand</span>
+        </h3>
         <ul>
-            <li><span lang="en">Built an advertising portal website using React for a renovation company.</span><span lang="zh">为一家装修公司开发广告门户网站，使用 React 技术。</span></li>
-            <li><span lang="en">Delivered responsive UI/UX and seamless client handover.</span><span lang="zh">交付响应式 UI/UX，并完成客户无缝交接。</span></li>
+            <li>
+                <span lang="en">Built a fully functional advertising portal website using React for a renovation company.</span>
+                <span lang="zh">为一家装修公司使用 React 搭建整站广告门户。</span>
+            </li>
+            <li>
+                <span lang="en">Delivered end-to-end design and deployment with responsive UI/UX and seamless client handover.</span>
+                <span lang="zh">交付端到端设计与部署，实现响应式 UI/UX，并完成无缝交接。</span>
+            </li>
+            <li>
+                <span lang="en">Implemented SEO strategies (semantic HTML, meta tags, sitemap) to improve search visibility.</span>
+                <span lang="zh">实施 SEO 策略（语义化 HTML、元标签、站点地图）提升搜索可见性。</span>
+            </li>
         </ul>
 
-        <h3>Optimal Drainage & Traffic Services Limited · IT Support · Jun 2024 – Dec 2024</h3>
+        <h3>
+            Optimal Drainage & Traffic Services Limited · IT Support
+            · Jun 2024 – Dec 2024 · <span class="muted">Auckland, New Zealand</span>
+        </h3>
         <ul>
-            <li><span lang="en">Investigated IT infringement cases.</span><span lang="zh">调查 IT 相关侵权案件。</span></li>
-            <li><span lang="en">Led data recovery using web scraping and OCR.</span><span lang="zh">主导数据恢复，采用网页爬虫与 OCR 技术。</span></li>
+            <li>
+                <span lang="en">Investigated and provided evidence for IT-related infringement cases.</span>
+                <span lang="zh">调查并提供 IT 相关侵权案件证据。</span>
+            </li>
+            <li>
+                <span lang="en">Led data recovery using web scraping and OCR techniques.</span>
+                <span lang="zh">主导数据恢复，采用网页爬虫与 OCR 技术。</span>
+            </li>
         </ul>
 
-        <h3>Yonyou Network Technology Co., Ltd. · Junior Backend Developer · Mar 2022 – Dec 2023</h3>
+        <h3>
+            Yonyou Network Technology Co., Ltd. ·
+            <span lang="en">Junior Backend Developer (Java)</span><span lang="zh">初级后端开发工程师（Java）</span>
+            · Mar 2022 – Dec 2023 · <span class="muted">Zhengzhou, China</span>
+        </h3>
         <ul>
-            <li><span lang="en">Developed login interface with Spring Boot and RestTemplate.</span><span lang="zh">使用 Spring Boot 与 RestTemplate 开发登录接口。</span></li>
-            <li><span lang="en">Optimized concurrent processing with MyBatis and scheduled tasks.</span><span lang="zh">利用 MyBatis 与定时任务优化并发处理性能。</span></li>
-            <li><span lang="en">Implemented AOP-based upgrades by reverse engineering.</span><span lang="zh">通过逆向工程实现基于 AOP 的功能升级。</span></li>
-            <li><span lang="en">Analyzed source code with Jadx for debugging.</span><span lang="zh">使用 Jadx 分析源码以进行调试与改进。</span></li>
+            <li>
+                <span lang="en">Developed a jump-start login interface using Spring Boot and RestTemplate to enhance authentication flows.</span>
+                <span lang="zh">使用 Spring Boot 与 RestTemplate 开发快速登录接口，优化认证流程。</span>
+            </li>
+            <li>
+                <span lang="en">Designed and optimized concurrent processing with MyBatis and scheduled tasks, improving query performance.</span>
+                <span lang="zh">基于 MyBatis 与定时任务优化并发处理与查询性能。</span>
+            </li>
+            <li>
+                <span lang="en">Implemented AOP-based feature upgrades via reverse engineering to extend existing systems.</span>
+                <span lang="zh">通过逆向工程实现基于 AOP 的功能升级，扩展存量系统。</span>
+            </li>
+            <li>
+                <span lang="en">Applied browser message queues and asynchronous event loop knowledge to debug real-time dashboards.</span>
+                <span lang="zh">结合浏览器消息队列与异步事件循环原理，调试实时看板。</span>
+            </li>
+            <li>
+                <span lang="en">Used Jadx for code analysis to support debugging and enhancements.</span>
+                <span lang="zh">使用 Jadx 进行代码分析，支持调试与功能完善。</span>
+            </li>
         </ul>
     </section>
 
     <section>
         <h2><span lang="en">Technical Skills</span><span lang="zh">技术技能</span></h2>
         <ul>
-            <li><span lang="en">Backend Development: Java (Spring Boot, Spring MVC), C# (.NET Core, ASP.NET)</span><span lang="zh">后端开发：Java（Spring Boot, Spring MVC）、C#（.NET Core, ASP.NET）</span></li>
-            <li><span lang="en">Frontend Development: React.js, HTML, CSS, JavaScript</span><span lang="zh">前端开发：React.js、HTML、CSS、JavaScript</span></li>
-            <li><span lang="en">Database Management: MyBatis, SQL</span><span lang="zh">数据库管理：MyBatis、SQL</span></li>
-            <li><span lang="en">Artificial Intelligence: Machine Learning, Neural networks, Random forests, Regression, Clustering, Decision trees</span><span lang="zh">人工智能：机器学习、神经网络、随机森林、回归、聚类、决策树</span></li>
-            <li><span lang="en">Servers: Linux, Windows Server</span><span lang="zh">服务器：Linux、Windows Server</span></li>
-            <li><span lang="en">Algorithms & Data Structures: Trees, Graphs, Sorting, Searching</span><span lang="zh">算法与数据结构：树、图、排序、搜索算法</span></li>
-            <li><span lang="en">Networking & Security: TLS/SSL, Cisco, X.509 certificate, Cybersecurity</span><span lang="zh">网络与安全：TLS/SSL、思科、X.509 证书、网络安全</span></li>
-            <li><span lang="en">Automation & Web Scraping: Python (Scrapy, Selenium, BeautifulSoup), OCR, JWT</span><span lang="zh">自动化与爬虫：Python（Scrapy, Selenium, BeautifulSoup）、OCR、JWT</span></li>
+            <li>
+                <span lang="en">Backend: Java (Spring Boot, Spring MVC), C# (.NET Core, ASP.NET)</span>
+                <span lang="zh">后端：Java（Spring Boot，Spring MVC）、C#（.NET Core，ASP.NET）</span>
+            </li>
+            <li>
+                <span lang="en">Frontend: React.js, SEO, Frontend Engineering & Build Optimization (Webpack/Vite), V8 Rendering Engine, Browser Event Loop & Message Queue</span>
+                <span lang="zh">前端：React.js、SEO、前端工程与构建优化（Webpack/Vite）、V8 渲染引擎、浏览器事件循环与消息队列</span>
+            </li>
+            <li>
+                <span lang="en">Database: MyBatis, SQL, MongoDB</span>
+                <span lang="zh">数据库：MyBatis、SQL、MongoDB</span>
+            </li>
+            <li>
+                <span lang="en">AI/ML: Machine Learning, Neural Networks, Random Forests, Linear/Logistic Regression, Clustering, Decision Trees</span>
+                <span lang="zh">人工智能/机器学习：神经网络、随机森林、线性/逻辑回归、聚类、决策树</span>
+            </li>
+            <li>
+                <span lang="en">Servers: Linux, Windows Server</span>
+                <span lang="zh">服务器：Linux、Windows Server</span>
+            </li>
+            <li>
+                <span lang="en">Algorithms & Data Structures: Trees, Graphs, Sorting, Search Algorithms</span>
+                <span lang="zh">算法与数据结构：树、图、排序、搜索算法</span>
+            </li>
+            <li>
+                <span lang="en">Networking & Security: TLS/SSL, Cisco, X.509 Certificate, Cybersecurity</span>
+                <span lang="zh">网络与安全：TLS/SSL、思科、X.509 证书、网络安全</span>
+            </li>
+            <li>
+                <span lang="en">Automation & Web Scraping: Python (Scrapy, Selenium, BeautifulSoup), OCR, JWT</span>
+                <span lang="zh">自动化与爬虫：Python（Scrapy、Selenium、BeautifulSoup）、OCR、JWT</span>
+            </li>
         </ul>
     </section>
 
     <section>
         <h2><span lang="en">Personal Skills</span><span lang="zh">个人技能</span></h2>
         <ul>
-            <li><span lang="en">Language Skills: English (Proficient), Mandarin (Native)</span><span lang="zh">语言能力：英语（熟练）、中文（母语）</span></li>
-            <li><span lang="en">Critical Thinking: Flexible use of logic</span><span lang="zh">批判性思维：灵活运用逻辑思考</span></li>
-            <li><span lang="en">Time Management & Organizational Skills: Proficient in planning and prioritization</span><span lang="zh">时间管理与组织能力：擅长计划与优先级排序</span></li>
-            <li><span lang="en">Communication: Effective with teams, stakeholders, non-technical audiences</span><span lang="zh">沟通能力：能与团队、利益相关者及非技术人员高效沟通</span></li>
+            <li>
+                <span lang="en">Language: English (Proficient), Mandarin (Native Proficiency)</span>
+                <span lang="zh">语言：英语（熟练）、中文（母语）</span>
+            </li>
+            <li>
+                <span lang="en">Critical Thinking: Flexible use of logic</span>
+                <span lang="zh">批判性思维：灵活运用逻辑思考</span>
+            </li>
+            <li>
+                <span lang="en">Time Management & Organization: Strong planning and prioritization, on-time delivery</span>
+                <span lang="zh">时间管理与组织：擅长计划与优先排序，保证按时交付</span>
+            </li>
+            <li>
+                <span lang="en">Communication: Effective with teams, stakeholders, and non-technical audiences</span>
+                <span lang="zh">沟通：善于与团队、利益相关者及非技术人员高效沟通</span>
+            </li>
         </ul>
     </section>
 
     <section>
         <h2><span lang="en">Achievements</span><span lang="zh">成就</span></h2>
         <ul>
-            <li><span lang="en">2024-COMPSCI 742 Advanced Internet: Global Data Communications A</span><span lang="zh">2024-COMPSCI 742 高级互联网：全球数据通信 A</span></li>
-            <li><span lang="en">2024-COMPSCI 726 Network Defence and Countermeasures A-</span><span lang="zh">2024-COMPSCI 726 网络防御与对策 A-</span></li>
-            <li><span lang="en">2024-COMPSCI 706 Health Data Analytics A-</span><span lang="zh">2024-COMPSCI 706 健康数据分析 A-</span></li>
+            <li><span lang="en">2024 — COMPSCI 742 Advanced Internet: Global Data Communications — A</span><span lang="zh">2024 — COMPSCI 742 高级互联网：全球数据通信 — A</span></li>
+            <li><span lang="en">2024 — COMPSCI 726 Network Defence and Countermeasures — A-</span><span lang="zh">2024 — COMPSCI 726 网络防御与对策 — A-</span></li>
+            <li><span lang="en">2024 — COMPSCI 706 Health Data Analytics — A-</span><span lang="zh">2024 — COMPSCI 706 健康数据分析 — A-</span></li>
         </ul>
     </section>
+
+<!--    <section>-->
+<!--        <h2><span lang="en">Referee</span><span lang="zh">推荐人</span></h2>-->
+<!--        <p>-->
+<!--            <span lang="en">Teulia Alaalatoa · 021 000 0000 · teulia.alaalatoawork@email.com</span>-->
+<!--            <span lang="zh">Teulia Alaalatoa · 021 000 0000 · teulia.alaalatoawork@email.com</span>-->
+<!--        </p>-->
+<!--    </section>-->
 
     <footer>
         © <span id="y"></span> Jiaheng Li · <span lang="en">Last updated on</span><span lang="zh">最近更新：</span> <span id="d"></span>
@@ -141,7 +259,7 @@
             if(saved){html.setAttribute('lang', saved);}
         }
         btn.addEventListener('click', ()=>{
-            const next = html.getAttribute('lang')==='zh'?'en':'zh';
+            const next = html.getAttribute('lang')==='zh' ? 'en' : 'zh';
             html.setAttribute('lang', next);
             localStorage.setItem('lang', next);
         });
