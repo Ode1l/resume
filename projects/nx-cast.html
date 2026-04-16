@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NX-Cast - Project Details</title>
+    <style>
+        :root{
+            --bg:#f8fafc;
+            --panel:#ffffff;
+            --panel-alt:#eff6ff;
+            --text:#0f172a;
+            --muted:#475569;
+            --line:#cbd5e1;
+            --accent:#2563eb;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background:
+                radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 34%),
+                linear-gradient(180deg, #fbfdff 0%, var(--bg) 42%);
+            color:var(--text);
+            font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+        a{color:#1d4ed8}
+        .container{max-width:1080px;margin:0 auto;padding:28px 20px 72px}
+        .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+        .btn{
+            border:1px solid var(--accent);
+            padding:8px 14px;
+            border-radius:999px;
+            text-decoration:none;
+            color:var(--accent);
+            background:#fff;
+            cursor:pointer;
+            font:inherit;
+        }
+        .btn:hover{background:var(--accent);color:#fff}
+        .hero{
+            background:linear-gradient(135deg, rgba(37,99,235,.10), rgba(191,219,254,.28));
+            border:1px solid rgba(37,99,235,.16);
+            border-radius:24px;
+            padding:28px;
+            margin-bottom:22px;
+            box-shadow:0 18px 48px rgba(15,23,42,.06);
+        }
+        .eyebrow{color:#1d4ed8;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+        h1{margin:8px 0 10px;font-size:34px;line-height:1.15}
+        .subtitle{max-width:760px;color:var(--muted);margin:0}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+        .stat,.section,.callout{
+            background:var(--panel);
+            border:1px solid var(--line);
+            border-radius:18px;
+            box-shadow:0 12px 28px rgba(15,23,42,.04);
+        }
+        .stat{padding:16px}
+        .stat h2{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+        .stat p{margin:0}
+        .content{display:grid;gap:18px}
+        .section{padding:22px}
+        .section h2{margin:0 0 12px;font-size:22px}
+        .section p{margin:0 0 12px}
+        .section p:last-child{margin-bottom:0}
+        .section ul{margin:8px 0 0 18px;padding:0}
+        .section li{margin:6px 0}
+        .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+        .callout{padding:18px;background:linear-gradient(180deg, #ffffff, var(--panel-alt))}
+        .callout h3{margin:0 0 10px;font-size:18px}
+        pre{
+            margin:12px 0 0;
+            background:#0f172a;
+            color:#e2e8f0;
+            border-radius:16px;
+            padding:16px;
+            overflow:auto;
+            font:13px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+        .chips{display:flex;flex-wrap:wrap;gap:8px}
+        .chip{
+            display:inline-flex;
+            align-items:center;
+            padding:6px 10px;
+            border-radius:999px;
+            background:#dbeafe;
+            color:#1e3a8a;
+            border:1px solid #bfdbfe;
+            font-size:14px;
+        }
+        footer{margin-top:20px;color:var(--muted);font-size:14px}
+        html[lang="en"] [lang="zh"]{display:none}
+        html[lang="zh"] [lang="en"]{display:none}
+        @media print{
+            body{background:#fff}
+            .toolbar{display:none}
+            .hero,.stat,.section,.callout{box-shadow:none}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="toolbar">
+        <a class="btn" href="../index.html#works"><span lang="en">Back to Resume</span><span lang="zh">返回简历</span></a>
+        <a class="btn" href="https://github.com/Ode1l/NX-Cast" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button class="btn" id="langToggle">EN / 中文</button>
+    </div>
+
+    <header class="hero">
+        <div class="eyebrow"><span lang="en">Project Details</span><span lang="zh">项目详情</span></div>
+        <h1>NX-Cast</h1>
+        <p class="subtitle">
+            <span lang="en">An open-source media receiver for Nintendo Switch homebrew on Atmosphere, focused on building a standards-oriented DLNA DMR stack with a direct renderer-to-libmpv playback path and runtime-synchronized protocol state.</span>
+            <span lang="zh">一个运行于 Atmosphere 环境下的 Nintendo Switch 开源媒体接收器，重点构建面向标准的 DLNA DMR 协议栈，并打通 renderer 到 libmpv 的直接播放链路与运行时状态同步。</span>
+        </p>
+
+        <div class="grid">
+            <div class="stat">
+                <h2><span lang="en">Role</span><span lang="zh">角色</span></h2>
+                <p><span lang="en">System design, DLNA protocol implementation, playback pipeline integration</span><span lang="zh">系统设计、DLNA 协议实现、播放链路集成</span></p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Focus</span><span lang="zh">重点</span></h2>
+                <p><span lang="en">DLNA DMR interoperability, renderer state fidelity, Switch playback runtime</span><span lang="zh">DLNA DMR 兼容性、播放状态一致性、Switch 平台运行时播放</span></p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Core Stack</span><span lang="zh">核心技术栈</span></h2>
+                <p>C, libnx, devkitPro, SSDP, SOAP, GENA, libmpv, OpenGL</p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Repository</span><span lang="zh">仓库</span></h2>
+                <p><a href="https://github.com/Ode1l/NX-Cast" target="_blank" rel="noopener noreferrer">github.com/Ode1l/NX-Cast</a></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="section">
+            <h2><span lang="en">Overview</span><span lang="zh">项目概述</span></h2>
+            <p>
+                <span lang="en">NX-Cast is an open-source media receiver for Nintendo Switch homebrew, built around a generic DLNA DMR foundation. The project aims to make playback control and runtime state stay aligned, so control points see an accurate, protocol-compliant device state while the renderer runs real media playback through libmpv.</span>
+                <span lang="zh">NX-Cast 是一个面向 Nintendo Switch Homebrew 的开源媒体接收器，核心是通用化的 DLNA DMR 基础能力。项目目标是让控制协议状态与真实播放运行时保持一致，使控制端看到准确、符合协议的设备状态，同时由 libmpv 驱动实际媒体播放。</span>
+            </p>
+            <div class="chips">
+                <span class="chip">DLNA DMR</span>
+                <span class="chip">SSDP</span>
+                <span class="chip">SOAP</span>
+                <span class="chip">GENA</span>
+                <span class="chip">libmpv</span>
+                <span class="chip">OpenGL</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">What I Built</span><span lang="zh">我完成的核心能力</span></h2>
+            <ul>
+                <li><span lang="en">Implemented SSDP discovery, runtime-served `Description.xml`, service control descriptions, SOAP actions, and GENA subscriptions for DLNA DMR control flow.</span><span lang="zh">实现 SSDP 发现、运行时 `Description.xml`、服务控制描述、SOAP 动作与 GENA 订阅，完成 DLNA DMR 控制链路。</span></li>
+                <li><span lang="en">Built a direct `URL -> renderer -> libmpv` playback path, using libmpv as the playback, demux, and decode engine.</span><span lang="zh">构建 `URL -> renderer -> libmpv` 的直接播放路径，使用 libmpv 作为播放、解复用与解码核心。</span></li>
+                <li><span lang="en">Designed a renderer snapshot and event bridge so protocol-observed state reflects runtime playback properties such as duration, pause, mute, seekability, and end-of-file transitions.</span><span lang="zh">设计 renderer 快照与事件桥接，使协议可观察状态能够反映时长、暂停、静音、可 seek 性和播放结束等运行时属性。</span></li>
+                <li><span lang="en">Integrated OpenGL/libmpv render API on Switch while keeping the project compatible with the current devkitPro/libnx toolchain.</span><span lang="zh">在 Switch 平台集成 OpenGL/libmpv 渲染 API，并保持项目对当前 devkitPro/libnx 工具链的兼容。</span></li>
+            </ul>
+        </section>
+
+        <section class="two-col">
+            <div class="callout">
+                <h3><span lang="en">Architecture</span><span lang="zh">架构设计</span></h3>
+                <p>
+                    <span lang="en">The project is split into a protocol stack and a player stack. Protocol modules handle discovery, description, and control; player modules handle session state, playback backend, and rendering.</span>
+                    <span lang="zh">项目架构拆分为协议栈和播放器栈。协议模块负责发现、描述与控制；播放器模块负责会话状态、播放后端与渲染。</span>
+                </p>
+                <pre>main
+  -> protocol/dlna
+       -> discovery
+       -> description
+       -> control
+  -> player
+       -> core
+       -> backend
+       -> render</pre>
+            </div>
+            <div class="callout">
+                <h3><span lang="en">Playback Model</span><span lang="zh">播放模型</span></h3>
+                <p>
+                    <span lang="en">Instead of maintaining a separate pre-open model, the project keeps the playback path intentionally thin: control actions call the renderer, the renderer drives libmpv, and observed runtime properties are synced back into protocol state.</span>
+                    <span lang="zh">项目没有保留额外的预打开模型，而是采用更薄的播放路径：控制动作直接调用 renderer，由 renderer 驱动 libmpv，再将运行时属性同步回协议状态。</span>
+                </p>
+                <pre>SetAVTransportURI
+  -> renderer_set_uri(...)
+  -> libmpv loadfile
+  -> observed runtime properties
+  -> protocol_state sync</pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">Key Technical Decisions</span><span lang="zh">关键技术决策</span></h2>
+            <ul>
+                <li><span lang="en">Kept protocol code standards-first and protocol-focused instead of mixing it with playback implementation details.</span><span lang="zh">坚持让协议代码以标准兼容性为优先，不把播放实现细节直接混入协议逻辑。</span></li>
+                <li><span lang="en">Used libmpv as the playback core so demuxing, decoding, and runtime state observation stay on the same engine.</span><span lang="zh">采用 libmpv 作为播放核心，使解复用、解码与运行时状态观测统一在同一引擎内完成。</span></li>
+                <li><span lang="en">Aligned protocol-facing state with renderer-observed runtime state to improve control fidelity across mixed DLNA control points.</span><span lang="zh">将协议可见状态与 renderer 观测到的运行时状态对齐，提升在不同 DLNA 控制端下的控制准确性。</span></li>
+                <li><span lang="en">Chose a direct renderer path and incremental refactoring strategy, separating structural refactors from behavior changes to keep the system stable.</span><span lang="zh">采用直接 renderer 路径与渐进式重构策略，把结构性重构与行为修改拆开推进，保障系统稳定性。</span></li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">Why This Project Matters</span><span lang="zh">这个项目体现了什么能力</span></h2>
+            <ul>
+                <li><span lang="en">Protocol engineering: implementing a real device-facing DLNA control stack instead of mock interfaces.</span><span lang="zh">协议工程能力：实现真实对外的 DLNA 控制栈，而不是停留在模拟接口层面。</span></li>
+                <li><span lang="en">Systems integration: bridging network protocol state, playback runtime, and rendering on a constrained console environment.</span><span lang="zh">系统集成能力：在受限的主机环境中，把网络协议状态、播放运行时与渲染链路打通。</span></li>
+                <li><span lang="en">Low-level debugging and architecture discipline: balancing standards compliance, toolchain constraints, and runtime stability.</span><span lang="zh">底层调试与架构约束能力：在标准兼容、工具链限制与运行稳定性之间做工程取舍。</span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <span lang="en">Derived from the repository README and rewritten as a recruiter-facing project page.</span>
+        <span lang="zh">基于仓库 README 信息整理，并重写为面向招聘场景的项目详情页。</span>
+    </footer>
+</div>
+<script>
+    (function(){
+        const html = document.documentElement;
+        const btn = document.getElementById('langToggle');
+        const saved = localStorage.getItem('lang');
+        if(saved){ html.setAttribute('lang', saved); }
+        btn.addEventListener('click', ()=>{
+            const next = html.getAttribute('lang') === 'zh' ? 'en' : 'zh';
+            html.setAttribute('lang', next);
+            localStorage.setItem('lang', next);
+        });
+    })();
+</script>
+</body>
+</html>

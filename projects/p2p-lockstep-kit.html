@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>p2p-lockstep-kit - Project Details</title>
+    <style>
+        :root{
+            --bg:#f8fafc;
+            --panel:#ffffff;
+            --panel-alt:#eef4ff;
+            --text:#0f172a;
+            --muted:#475569;
+            --line:#cbd5e1;
+            --accent:#2563eb;
+            --accent-2:#1d4ed8;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            background:
+                radial-gradient(circle at top left, rgba(37,99,235,.12), transparent 36%),
+                linear-gradient(180deg, #f8fbff 0%, var(--bg) 38%);
+            color:var(--text);
+            font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+        a{color:var(--accent-2)}
+        .container{max-width:1080px;margin:0 auto;padding:28px 20px 72px}
+        .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+        .btn{
+            border:1px solid var(--accent);
+            padding:8px 14px;
+            border-radius:999px;
+            text-decoration:none;
+            color:var(--accent);
+            background:#fff;
+            cursor:pointer;
+            font:inherit;
+        }
+        .btn:hover{background:var(--accent);color:#fff}
+        .hero{
+            background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(29,78,216,.04));
+            border:1px solid rgba(37,99,235,.18);
+            border-radius:24px;
+            padding:28px;
+            margin-bottom:22px;
+            box-shadow:0 18px 48px rgba(15,23,42,.06);
+        }
+        .eyebrow{color:var(--accent-2);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+        h1{margin:8px 0 10px;font-size:34px;line-height:1.15}
+        .subtitle{max-width:760px;color:var(--muted);margin:0}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+        .stat,.section,.callout{
+            background:var(--panel);
+            border:1px solid var(--line);
+            border-radius:18px;
+            box-shadow:0 12px 28px rgba(15,23,42,.04);
+        }
+        .stat{padding:16px}
+        .stat h2{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+        .stat p{margin:0}
+        .content{display:grid;gap:18px}
+        .section{padding:22px}
+        .section h2{margin:0 0 12px;font-size:22px}
+        .section p{margin:0 0 12px}
+        .section p:last-child{margin-bottom:0}
+        .section ul{margin:8px 0 0 18px;padding:0}
+        .section li{margin:6px 0}
+        .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+        .callout{padding:18px;background:linear-gradient(180deg, #ffffff, var(--panel-alt))}
+        .callout h3{margin:0 0 10px;font-size:18px}
+        pre{
+            margin:12px 0 0;
+            background:#0f172a;
+            color:#e2e8f0;
+            border-radius:16px;
+            padding:16px;
+            overflow:auto;
+            font:13px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+        .chips{display:flex;flex-wrap:wrap;gap:8px}
+        .chip{
+            display:inline-flex;
+            align-items:center;
+            padding:6px 10px;
+            border-radius:999px;
+            background:#e8f0ff;
+            color:#1e3a8a;
+            border:1px solid #bfdbfe;
+            font-size:14px;
+        }
+        footer{margin-top:20px;color:var(--muted);font-size:14px}
+        html[lang="en"] [lang="zh"]{display:none}
+        html[lang="zh"] [lang="en"]{display:none}
+        @media print{
+            body{background:#fff}
+            .toolbar{display:none}
+            .hero,.stat,.section,.callout{box-shadow:none}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="toolbar">
+        <a class="btn" href="../index.html#works"><span lang="en">Back to Resume</span><span lang="zh">返回简历</span></a>
+        <a class="btn" href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <button class="btn" id="langToggle">EN / 中文</button>
+    </div>
+
+    <header class="hero">
+        <div class="eyebrow"><span lang="en">Project Details</span><span lang="zh">项目详情</span></div>
+        <h1>p2p-lockstep-kit</h1>
+        <p class="subtitle">
+            <span lang="en">A browser-first P2P lockstep session toolkit for turn-based games, designed to separate transport, session orchestration, state transitions, and game-rule extension points into a reusable TypeScript architecture.</span>
+            <span lang="zh">一个面向浏览器的 P2P lockstep 会话工具包，面向回合制游戏场景，将传输层、会话编排、状态迁移与游戏规则扩展点拆分为可复用的 TypeScript 架构。</span>
+        </p>
+
+        <div class="grid">
+            <div class="stat">
+                <h2><span lang="en">Role</span><span lang="zh">角色</span></h2>
+                <p><span lang="en">System design, protocol design, WebRTC networking, TypeScript implementation</span><span lang="zh">系统设计、协议设计、WebRTC 网络实现、TypeScript 开发</span></p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Focus</span><span lang="zh">重点</span></h2>
+                <p><span lang="en">Serverless P2P gameplay, session lifecycle control, consistency recovery</span><span lang="zh">无专用游戏服的 P2P 对战、会话生命周期控制、一致性恢复</span></p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Core Stack</span><span lang="zh">核心技术栈</span></h2>
+                <p>TypeScript, WebRTC DataChannel, WebSocket, FSM, State Hash, Snapshot Sync</p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Repository</span><span lang="zh">仓库</span></h2>
+                <p><a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">github.com/Ode1l/p2p-lockstep-kit</a></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="section">
+            <h2><span lang="en">Overview</span><span lang="zh">项目概述</span></h2>
+            <p>
+                <span lang="en">This project was built to provide a reusable networking and session layer for browser turn-based games such as gomoku, chess, and other strategy titles. Instead of coupling game rules, UI actions, and WebRTC negotiation into one code path, I separated them into a transport layer, a session layer, and game-specific extension points.</span>
+                <span lang="zh">这个项目的目标是为浏览器端回合制游戏，例如五子棋、国际象棋等策略类场景，提供可复用的网络与会话层。项目没有把游戏规则、UI 交互与 WebRTC 协商耦合在同一条链路里，而是拆分为传输层、会话层和游戏专属扩展点。</span>
+            </p>
+            <div class="chips">
+                <span class="chip">Command Bus</span>
+                <span class="chip">Session FSM</span>
+                <span class="chip">State Sync</span>
+                <span class="chip">Reconnect Recovery</span>
+                <span class="chip">Plugin Hooks</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">What Problem I Solved</span><span lang="zh">我解决了什么问题</span></h2>
+            <ul>
+                <li><span lang="en">Reduced browser-side WebRTC complexity into a small application-facing API with `register`, `connect`, `send`, and reactive event callbacks.</span><span lang="zh">把浏览器端复杂的 WebRTC 连接流程收敛为面向应用层的小型 API，包括 `register`、`connect`、`send` 和响应式事件回调。</span></li>
+                <li><span lang="en">Unified local UI actions and remote peer messages into one command pipeline, so legality checks and side effects run through the same deterministic path.</span><span lang="zh">将本地 UI 操作与远端对等消息统一进入同一条命令管线，使合法性校验与副作用执行都走同一条确定性路径。</span></li>
+                <li><span lang="en">Designed reconnect, rejoin, and snapshot synchronization flows to preserve game continuity under unstable network conditions.</span><span lang="zh">设计断线重连、重新加入和快照同步流程，在弱网或临时掉线场景下尽可能保持对局连续性。</span></li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">What I Built</span><span lang="zh">我完成的核心能力</span></h2>
+            <ul>
+                <li><span lang="en">A lightweight lockstep session layer for turn-based games over WebRTC DataChannel.</span><span lang="zh">基于 WebRTC DataChannel 的轻量级回合制 lockstep 会话层。</span></li>
+                <li><span lang="en">Command handlers for `READY`, `START`, `MOVE`, `UNDO`, `RESTART`, `REJOIN`, `SYNC_REQUEST`, and `SYNC_STATE`.</span><span lang="zh">支持 `READY`、`START`、`MOVE`、`UNDO`、`RESTART`、`REJOIN`、`SYNC_REQUEST`、`SYNC_STATE` 等命令处理器。</span></li>
+                <li><span lang="en">A transition-table-driven FSM to control lobby, gameplay, approval, syncing, and offline states.</span><span lang="zh">基于状态迁移表的 FSM，用于控制大厅、对局、审批、同步和离线状态。</span></li>
+                <li><span lang="en">State-hash validation, pending-action coordination, and snapshot sync hooks to support consistency checks and recovery.</span><span lang="zh">实现状态哈希校验、待审批动作协调和快照同步钩子，用于支撑一致性校验与故障恢复。</span></li>
+                <li><span lang="en">Plugin-style extension points for game-specific legality checks and win-condition handling.</span><span lang="zh">预留插件式扩展点，用于接入具体游戏的规则校验与胜负判定。</span></li>
+            </ul>
+        </section>
+
+        <section class="two-col">
+            <div class="callout">
+                <h3><span lang="en">Session Architecture</span><span lang="zh">会话层架构</span></h3>
+                <p>
+                    <span lang="en">The session layer centers on `CommandBus + FSM + State + Observer`. Local actions and remote envelopes are normalized into the same execution path, checked against the current session state, then applied to the store and reflected to the UI through observers.</span>
+                    <span lang="zh">会话层围绕 `CommandBus + FSM + State + Observer` 设计。本地动作与远端消息会先被规整到同一执行链路，再依据当前会话状态校验，最后写入状态并通过观察者回推到 UI。</span>
+                </p>
+                <pre>UI / LocalActionsAPI
+  -> CommandBus
+  -> Session Handlers
+  -> Session FSM
+  -> Session State
+  -> Observer / Notification Adapter</pre>
+            </div>
+            <div class="callout">
+                <h3><span lang="en">Network Architecture</span><span lang="zh">网络层架构</span></h3>
+                <p>
+                    <span lang="en">The network layer wraps signaling, peer negotiation, and transport control behind a simplified client API. `SignalingClient` handles WebSocket registration and relay, `RtcPeer` wraps the browser peer connection, and `NetworkClient` exposes a clean public interface.</span>
+                    <span lang="zh">网络层把信令、对等协商与传输控制收敛到简洁的客户端 API 中。`SignalingClient` 负责 WebSocket 注册与中继，`RtcPeer` 封装浏览器端对等连接，`NetworkClient` 则向上层暴露统一入口。</span>
+                </p>
+                <pre>SignalingClient (WebSocket)
+  -> offer / answer / ice relay
+RtcPeer (RTCPeerConnection)
+  -> DataChannel / media / reconnect cleanup
+NetworkClient
+  -> register / connect / send / onMessage</pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">Protocol and Consistency Model</span><span lang="zh">协议与一致性设计</span></h2>
+            <p>
+                <span lang="en">The project uses a lightweight session envelope with `type`, `sid`, `seq`, `turn`, `stateHash`, and `payload`. This keeps routing simple while still leaving room for deduplication, anti-replay checks, turn validation, and desync recovery.</span>
+                <span lang="zh">项目采用轻量级会话信封结构，包含 `type`、`sid`、`seq`、`turn`、`stateHash` 与 `payload` 字段，在保持路由简洁的同时，为去重、防重放、回合校验和失同步恢复预留了空间。</span>
+            </p>
+            <pre>type SessionMessage = {
+  type: 'READY' | 'START' | 'MOVE' | 'UNDO' | 'RESTART'
+      | 'APPROVE' | 'REJECT' | 'REJOIN'
+      | 'SYNC_REQUEST' | 'SYNC_STATE';
+  from?: string;
+  seq?: number;
+  sid?: string;
+  turn?: number;
+  stateHash?: string;
+  payload?: unknown;
+};</pre>
+            <ul>
+                <li><span lang="en">`UNDO` and `RESTART` are modeled as negotiated actions, finalized only through `APPROVE` or `REJECT`.</span><span lang="zh">`UNDO` 与 `RESTART` 被建模为需要协商确认的动作，只有通过 `APPROVE` 或 `REJECT` 才会最终落地。</span></li>
+                <li><span lang="en">`SYNC_REQUEST` and `SYNC_STATE` support reconnect and state restoration after temporary disconnection.</span><span lang="zh">`SYNC_REQUEST` 与 `SYNC_STATE` 用于支撑临时断线后的重连与状态恢复。</span></li>
+                <li><span lang="en">`turn` and `stateHash` are reserved for desync detection and deterministic validation under lockstep play.</span><span lang="zh">`turn` 与 `stateHash` 用于在 lockstep 对局中进行失同步检测与确定性校验。</span></li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">Why This Project Matters</span><span lang="zh">这个项目体现了什么能力</span></h2>
+            <ul>
+                <li><span lang="en">Protocol design: defining message boundaries, recovery flows, and destructive-action coordination.</span><span lang="zh">协议设计能力：能够定义消息边界、恢复流程与破坏性动作的协调机制。</span></li>
+                <li><span lang="en">State modeling: building deterministic state transitions with a transition-table FSM.</span><span lang="zh">状态建模能力：能够基于状态迁移表构建确定性的状态流转。</span></li>
+                <li><span lang="en">Networking abstraction: reducing raw WebRTC complexity into a reusable, application-facing toolkit.</span><span lang="zh">网络抽象能力：能够把原始 WebRTC 复杂性封装为可复用、面向应用层的工具包。</span></li>
+                <li><span lang="en">Reusable system thinking: separating transport, session orchestration, and game-rule plugins instead of shipping one-off logic.</span><span lang="zh">系统复用思维：不是做一次性业务逻辑，而是把传输层、会话编排与游戏规则插件解耦为可复用架构。</span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <span lang="en">Derived from project architecture notes and rewritten as a recruiter-facing project page.</span>
+        <span lang="zh">基于项目架构文档整理，并重写为面向招聘场景的项目详情页。</span>
+    </footer>
+</div>
+<script>
+    (function(){
+        const html = document.documentElement;
+        const btn = document.getElementById('langToggle');
+        const saved = localStorage.getItem('lang');
+        if(saved){ html.setAttribute('lang', saved); }
+        btn.addEventListener('click', ()=>{
+            const next = html.getAttribute('lang') === 'zh' ? 'en' : 'zh';
+            html.setAttribute('lang', next);
+            localStorage.setItem('lang', next);
+        });
+    })();
+</script>
+</body>
+</html>
