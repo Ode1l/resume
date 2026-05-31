@@ -6,19 +6,41 @@
     <title>Jiaheng Li — Resume</title>
     <style>
         :root{
-            --bg:#f8fafc; --card:#ffffff; --muted:#475569; --text:#0f172a; --accent:#2563eb;
+            --bg:#ffffff;
+            --muted:#52606d;
+            --text:#111827;
+            --line:#d1d5db;
+            --accent:#1f2937;
+            --link:#1d4ed8;
         }
         body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;}
-        .container{max-width:900px;margin:0 auto;padding:32px 20px 64px;}
-        header{border-bottom:1px solid #cbd5e1;padding-bottom:16px;margin-bottom:20px;}
+        a{color:var(--link)}
+        .container{max-width:900px;margin:0 auto;padding:32px 24px 64px;}
+        header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px;}
         h1{margin:0;font-size:28px;letter-spacing:.5px}
         h2{margin-top:28px;margin-bottom:10px;font-size:20px;}
         h3{margin-top:16px;margin-bottom:6px;font-size:16px;}
         .muted{color:var(--muted)}
+        .reference-note{
+            margin:0 0 18px;
+            padding:12px 14px;
+            border-left:3px solid var(--accent);
+            background:#f8fafc;
+            color:var(--text);
+        }
+        .reference-note p{margin:0 0 6px}
+        .reference-note p:last-child{margin-bottom:0}
+        .project-note{
+            margin:0 0 18px;
+            padding-left:14px;
+            border-left:3px solid var(--line);
+        }
+        .project-note p{margin:0 0 6px}
+        .project-note p:last-child{margin-bottom:0}
         ul{margin:6px 0 12px 20px}
         li{margin:4px 0}
-        .btn{border:1px solid var(--accent);padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--accent);background:#fff;cursor:pointer}
-        .btn:hover{background:var(--accent);color:#fff}
+        .btn{border:1px solid var(--line);padding:6px 12px;border-radius:0;text-decoration:none;color:var(--text);background:#fff;cursor:pointer}
+        .btn:hover{background:#f9fafb;border-color:var(--accent)}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
         @media print{
@@ -61,8 +83,8 @@
 
         <h3>
             Skyline Consulting Engineers Limited ·
-            <span lang="en">Full-stack Software Developer Intern</span><span lang="zh">全栈软件开发实习生</span>
-            · Jul 2024 – Nov 2025 · <span class="muted">Auckland, New Zealand</span>
+            <span lang="en">Part-time Full-stack Software Developer</span><span lang="zh">兼职全栈软件开发工程师</span>
+            · Oct 2024 – Dec 2025 · <span class="muted">Auckland, New Zealand</span>
         </h3>
         <ul>
             <li>
@@ -78,6 +100,16 @@
                 <span lang="zh">重构应用架构，提升模块化程度、服务扩展能力与跨平台运行兼容性，支撑工程师在异构设备与多类部署环境下稳定协作。</span>
             </li>
         </ul>
+        <div class="reference-note">
+            <p>
+                <span lang="en"><strong>Employer Comment:</strong> Jiaheng showed strong ownership, learned quickly, and was able to translate engineering requirements into practical software solutions with minimal supervision.</span>
+                <span lang="zh"><strong>雇主评价：</strong>Jiaheng 具备很强的责任心与快速学习能力，能够在较少监督下把工程需求转化为可落地的软件方案。</span>
+            </p>
+            <p>
+                <span lang="en"><strong>Referee:</strong> Hongchang Zhang · 29 128 6676 · <a href="references/skyline-reference-letter.html">Reference Letter</a></span>
+                <span lang="zh"><strong>推荐人：</strong>Hongchang Zhang · 29 128 6676 · <a href="references/skyline-reference-letter.html">推荐信</a></span>
+            </p>
+        </div>
 
         <h3>
             Freelance Project ·
@@ -96,6 +128,28 @@
             <li>
                 <span lang="en">Implemented SEO strategies (semantic HTML, meta tags, sitemap) to improve search visibility.</span>
                 <span lang="zh">实施 SEO 策略（语义化 HTML、元标签、站点地图）提升搜索可见性。</span>
+            </li>
+        </ul>
+        <div class="project-note">
+            <p>
+                <span lang="en"><strong>Client:</strong> Haven Build Group</span>
+                <span lang="zh"><strong>客户：</strong>Haven Build Group</span>
+            </p>
+        </div>
+
+        <h3>
+            Optimal Drainage &amp; Traffic Services Limited ·
+            <span lang="en">Part-time IT Support</span><span lang="zh">兼职 IT 支持</span>
+            · Jun 2024 – Oct 2024 · <span class="muted">Auckland, New Zealand</span>
+        </h3>
+        <ul>
+            <li>
+                <span lang="en">Provisioned and managed computers, user accounts, and business application access for a 10-person team.</span>
+                <span lang="zh">负责为 10 人团队配置并管理电脑、用户账户及各类业务应用访问权限。</span>
+            </li>
+            <li>
+                <span lang="en">Collected and organized digital evidence to support pre-litigation action against a former employee in an intellectual property infringement matter.</span>
+                <span lang="zh">采集并整理数字证据，用于支持针对前员工知识产权侵权行为的诉前法律行动。</span>
             </li>
         </ul>
 
@@ -138,6 +192,37 @@
 
     <section id="works">
         <h2><span lang="en">Works</span><span lang="zh">项目作品</span></h2>
+
+        <h3>
+            Haven Build Group ·
+            <span lang="en">Commercial Brochure Website</span><span lang="zh">商业宣传官网</span>
+        </h3>
+        <ul>
+            <li>
+                <span lang="en">Built and delivered a commercial marketing website for Haven Build Group, focused on service presentation, lead generation, and responsive browsing across desktop and mobile.</span>
+                <span lang="zh">为 Haven Build Group 开发并交付商业宣传官网，重点覆盖服务展示、客户获客与桌面端/移动端的响应式浏览体验。</span>
+            </li>
+            <li>
+                <span lang="en">Handled implementation, Vercel deployment, SEO setup, and production handover as an end-to-end client delivery project.</span>
+                <span lang="zh">作为端到端客户交付项目，负责实现、Vercel 部署、SEO 配置与上线交接。</span>
+            </li>
+            <li>
+                <span lang="en">Project Value: NZ$2,500</span>
+                <span lang="zh">项目金额：2,500 新西兰元</span>
+            </li>
+            <li>
+                <span lang="en">Client Comment: The website was delivered professionally and made our services clearer to present to potential customers.</span>
+                <span lang="zh">客户评价：网站交付专业，能够更清晰地向潜在客户展示我们的服务内容。</span>
+            </li>
+            <li>
+                <span lang="en">Links: <a href="projects/haven-build-group.html">Project Details</a> · <span class="muted">Client reference available upon request</span></span>
+                <span lang="zh">链接：<a href="projects/haven-build-group.html">项目详情</a> · <span class="muted">客户推荐信息可按需提供</span></span>
+            </li>
+            <li>
+                <span lang="en">Tech Stack: React, TypeScript, Vercel, SEO, Responsive UI</span>
+                <span lang="zh">技术栈：React、TypeScript、Vercel、SEO、响应式界面</span>
+            </li>
+        </ul>
 
         <h3>
             NX-Cast ·

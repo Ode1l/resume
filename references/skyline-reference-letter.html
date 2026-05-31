@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skyline Reference Letter - Jiaheng Li</title>
+    <style>
+        :root{
+            --bg:#f8fafc;
+            --paper:#ffffff;
+            --text:#0f172a;
+            --muted:#475569;
+            --line:#cbd5e1;
+            --accent:#2563eb;
+        }
+        body{
+            margin:0;
+            background:var(--bg);
+            color:var(--text);
+            font:16px/1.7 Georgia, "Times New Roman", serif;
+        }
+        .container{max-width:820px;margin:0 auto;padding:28px 20px 60px;}
+        .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+        .btn{
+            border:1px solid var(--accent);
+            padding:8px 14px;
+            border-radius:999px;
+            text-decoration:none;
+            color:var(--accent);
+            background:#fff;
+            cursor:pointer;
+            font:14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+        .btn:hover{background:var(--accent);color:#fff}
+        .paper{
+            background:var(--paper);
+            border:1px solid var(--line);
+            border-radius:18px;
+            padding:36px 40px 44px;
+            box-shadow:0 14px 40px rgba(15,23,42,.06);
+        }
+        h1{
+            margin:0 0 6px;
+            font:600 28px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing:.02em;
+        }
+        .meta{
+            color:var(--muted);
+            margin-bottom:26px;
+            font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+        .draft{
+            display:inline-block;
+            margin-bottom:16px;
+            padding:5px 10px;
+            border-radius:999px;
+            background:#eff6ff;
+            color:#1d4ed8;
+            border:1px solid #bfdbfe;
+            font:12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            text-transform:uppercase;
+            letter-spacing:.08em;
+        }
+        p{margin:0 0 16px}
+        .signature{margin-top:32px}
+        .signature strong{display:block}
+        .contact{margin-top:10px;color:var(--muted);font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+        @media print{
+            body{background:#fff}
+            .toolbar{display:none}
+            .paper{box-shadow:none;border:0;padding:0}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="toolbar">
+        <a class="btn" href="../index.html#works">Back to Resume</a>
+        <button class="btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <div class="paper">
+        <div class="draft">Draft for Employer Review</div>
+        <h1>Reference Letter</h1>
+        <div class="meta">
+            Skyline Consulting Engineers Limited<br />
+            Auckland, New Zealand
+        </div>
+
+        <p>To whom it may concern,</p>
+
+        <p>I am pleased to provide this reference for Jiaheng Li, who worked with Skyline Consulting Engineers Limited as a part-time Full-stack Software Developer from October 2024 to December 2025.</p>
+
+        <p>During his time with us, Jiaheng contributed to the modernization of our structural engineering workflow, including software development work related to SP1 calculation processes, backend service design, and cross-platform engineering tools. He was able to understand technical requirements quickly and convert them into practical software solutions that supported day-to-day engineering work.</p>
+
+        <p>Jiaheng demonstrated strong ownership, a solid learning mindset, and dependable execution. He worked across C#, React, Python, and Excel-based workflows, and contributed to improving maintainability, extensibility, and usability across different devices and operating environments. He was also effective at communicating with both technical and non-technical stakeholders, which made collaboration smooth.</p>
+
+        <p>From my experience, Jiaheng is a capable developer with good problem-solving ability, sound technical judgment, and the discipline to deliver useful work with limited supervision. I believe he would be a valuable addition to a software engineering, full-stack, or technical product team.</p>
+
+        <p>If you would like any further information, please feel free to contact me.</p>
+
+        <div class="signature">
+            <strong>Hongchang Zhang</strong>
+            Skyline Consulting Engineers Limited
+            <div class="contact">Phone: 29 128 6676</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Haven Build Group - Project Details</title>
+    <style>
+        :root{
+            --bg:#ffffff;
+            --panel:#ffffff;
+            --text:#111827;
+            --muted:#52606d;
+            --line:#d1d5db;
+            --accent:#1f2937;
+            --link:#1d4ed8;
+            --code:#f3f4f6;
+        }
+        *{box-sizing:border-box}
+        body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;}
+        a{color:var(--link)}
+        .container{max-width:980px;margin:0 auto;padding:28px 24px 64px}
+        .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+        .btn{border:1px solid var(--line);padding:8px 14px;border-radius:0;text-decoration:none;color:var(--text);background:#fff;cursor:pointer;font:inherit}
+        .btn:hover{background:#f9fafb;border-color:var(--accent)}
+        .hero{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:24px}
+        .eyebrow{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+        h1{margin:8px 0 10px;font-size:30px;line-height:1.15}
+        .subtitle{max-width:760px;color:var(--muted);margin:0}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+        .stat,.section,.callout{background:var(--panel);border:1px solid var(--line);border-radius:0}
+        .stat{padding:14px}
+        .stat h2{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+        .stat p{margin:0}
+        .content{display:grid;gap:16px}
+        .section{padding:18px}
+        .section h2{margin:0 0 10px;font-size:21px}
+        .section p{margin:0 0 12px}
+        .section p:last-child{margin-bottom:0}
+        .section ul{margin:8px 0 0 18px;padding:0}
+        .section li{margin:6px 0}
+        .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+        .callout{padding:18px}
+        footer{margin-top:20px;color:var(--muted);font-size:14px}
+        html[lang="en"] [lang="zh"]{display:none}
+        html[lang="zh"] [lang="en"]{display:none}
+        @media print{.toolbar{display:none}}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="toolbar">
+        <a class="btn" href="../index.html#works"><span lang="en">Back to Resume</span><span lang="zh">返回简历</span></a>
+        <button class="btn" id="langToggle">EN / 中文</button>
+    </div>
+
+    <header class="hero">
+        <div class="eyebrow"><span lang="en">Project Details</span><span lang="zh">项目详情</span></div>
+        <h1>Haven Build Group</h1>
+        <p class="subtitle">
+            <span lang="en">A commercial brochure website delivered for a renovation and construction business, focused on clear service presentation, search visibility, and practical client handover.</span>
+            <span lang="zh">一个为装修与建筑业务交付的商业宣传官网项目，重点提升服务展示清晰度、搜索可见性与实际客户交付效果。</span>
+        </p>
+
+        <div class="grid">
+            <div class="stat">
+                <h2><span lang="en">Role</span><span lang="zh">角色</span></h2>
+                <p><span lang="en">Freelance full-stack delivery, implementation, deployment, handover</span><span lang="zh">自由职业全流程交付、实现、部署与交接</span></p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Project Value</span><span lang="zh">项目金额</span></h2>
+                <p>NZ$2,500</p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Core Stack</span><span lang="zh">核心技术栈</span></h2>
+                <p>React, TypeScript, Vercel, SEO, Responsive UI</p>
+            </div>
+            <div class="stat">
+                <h2><span lang="en">Reference</span><span lang="zh">推荐信息</span></h2>
+                <p><span lang="en">Client reference available upon request</span><span lang="zh">客户推荐信息可按需提供</span></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="section">
+            <h2><span lang="en">Overview</span><span lang="zh">项目概述</span></h2>
+            <p>
+                <span lang="en">This project was a commercial website delivery for Haven Build Group. The goal was to create a clean and credible online presence that could present services clearly, work well across devices, and support inquiries from potential customers.</span>
+                <span lang="zh">这个项目是为 Haven Build Group 交付的商业官网。目标是搭建一个干净、可信的线上展示入口，能够清晰呈现服务内容，在多设备上稳定浏览，并支持潜在客户咨询。</span>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">What I Delivered</span><span lang="zh">交付内容</span></h2>
+            <ul>
+                <li><span lang="en">Implemented a responsive marketing website tailored for a renovation business.</span><span lang="zh">为装修业务实现响应式营销官网。</span></li>
+                <li><span lang="en">Structured service pages and layout to make offerings easier to understand for non-technical visitors.</span><span lang="zh">组织服务页面与页面结构，使非技术用户更容易理解业务内容。</span></li>
+                <li><span lang="en">Handled deployment on Vercel and prepared the project for straightforward client handover.</span><span lang="zh">完成 Vercel 部署，并将项目整理为便于客户后续接手的交付形态。</span></li>
+                <li><span lang="en">Set up baseline SEO elements including semantic structure, metadata, and sitemap support.</span><span lang="zh">配置基础 SEO 要素，包括语义化结构、元数据和站点地图支持。</span></li>
+            </ul>
+        </section>
+
+        <section class="two-col">
+            <div class="callout">
+                <h3><span lang="en">Commercial Outcome</span><span lang="zh">商业结果</span></h3>
+                <p>
+                    <span lang="en">This was a paid client project with a contract value of NZ$2,500. It demonstrates practical client delivery rather than an internal demo or portfolio-only build.</span>
+                    <span lang="zh">这是一个实际成交的付费客户项目，项目金额为 2,500 新西兰元，体现的是可落地的商业交付能力，而不是仅用于展示的内部 demo。</span>
+                </p>
+            </div>
+            <div class="callout">
+                <h3><span lang="en">Client Comment</span><span lang="zh">客户评价</span></h3>
+                <p>
+                    <span lang="en">The website was delivered professionally and made our services clearer to present to potential customers.</span>
+                    <span lang="zh">网站交付专业，能够更清晰地向潜在客户展示我们的服务内容。</span>
+                </p>
+                <p>
+                    <span lang="en">Detailed contact information will be added after client confirmation.</span>
+                    <span lang="zh">详细联系信息将在客户确认后补充。</span>
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">Why This Project Matters</span><span lang="zh">这个项目体现了什么能力</span></h2>
+            <ul>
+                <li><span lang="en">Commercial delivery: shipping a real client website with practical business expectations and handover requirements.</span><span lang="zh">商业交付能力：不是做练手项目，而是完成真实客户官网的落地与交接。</span></li>
+                <li><span lang="en">Product judgment: organizing content and layout for trust, clarity, and customer conversion.</span><span lang="zh">产品判断能力：围绕信任感、清晰度和客户转化组织内容与页面结构。</span></li>
+                <li><span lang="en">Engineering ownership: covering implementation, deployment, SEO basics, and final delivery as one project owner.</span><span lang="zh">工程 owner 能力：从实现、部署、SEO 基础到最终交付都由自己完整负责。</span></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <span lang="en">Commercial project summary prepared for recruiter-facing presentation.</span>
+        <span lang="zh">面向招聘场景整理的商业项目简介。</span>
+    </footer>
+</div>
+<script>
+    (function(){
+        const html = document.documentElement;
+        const btn = document.getElementById('langToggle');
+        const saved = localStorage.getItem('lang');
+        if(saved){ html.setAttribute('lang', saved); }
+        btn.addEventListener('click', ()=>{
+            const next = html.getAttribute('lang') === 'zh' ? 'en' : 'zh';
+            html.setAttribute('lang', next);
+            localStorage.setItem('lang', next);
+        });
+    })();
+</script>
+</body>
+</html>

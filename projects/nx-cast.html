@@ -6,95 +6,78 @@
     <title>NX-Cast - Project Details</title>
     <style>
         :root{
-            --bg:#f8fafc;
+            --bg:#ffffff;
             --panel:#ffffff;
-            --panel-alt:#eff6ff;
-            --text:#0f172a;
-            --muted:#475569;
-            --line:#cbd5e1;
-            --accent:#2563eb;
+            --text:#111827;
+            --muted:#52606d;
+            --line:#d1d5db;
+            --accent:#1f2937;
+            --link:#1d4ed8;
+            --code:#f3f4f6;
         }
         *{box-sizing:border-box}
         body{
             margin:0;
-            background:
-                radial-gradient(circle at top right, rgba(37,99,235,.10), transparent 34%),
-                linear-gradient(180deg, #fbfdff 0%, var(--bg) 42%);
+            background:var(--bg);
             color:var(--text);
             font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
         }
-        a{color:#1d4ed8}
-        .container{max-width:1080px;margin:0 auto;padding:28px 20px 72px}
+        a{color:var(--link)}
+        .container{max-width:980px;margin:0 auto;padding:28px 24px 64px}
         .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
         .btn{
-            border:1px solid var(--accent);
+            border:1px solid var(--line);
             padding:8px 14px;
-            border-radius:999px;
+            border-radius:0;
             text-decoration:none;
-            color:var(--accent);
+            color:var(--text);
             background:#fff;
             cursor:pointer;
             font:inherit;
         }
-        .btn:hover{background:var(--accent);color:#fff}
+        .btn:hover{background:#f9fafb;border-color:var(--accent)}
         .hero{
-            background:linear-gradient(135deg, rgba(37,99,235,.10), rgba(191,219,254,.28));
-            border:1px solid rgba(37,99,235,.16);
-            border-radius:24px;
-            padding:28px;
-            margin-bottom:22px;
-            box-shadow:0 18px 48px rgba(15,23,42,.06);
+            border-bottom:1px solid var(--line);
+            padding-bottom:18px;
+            margin-bottom:24px;
         }
-        .eyebrow{color:#1d4ed8;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-        h1{margin:8px 0 10px;font-size:34px;line-height:1.15}
+        .eyebrow{color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+        h1{margin:8px 0 10px;font-size:30px;line-height:1.15}
         .subtitle{max-width:760px;color:var(--muted);margin:0}
         .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
         .stat,.section,.callout{
             background:var(--panel);
             border:1px solid var(--line);
-            border-radius:18px;
-            box-shadow:0 12px 28px rgba(15,23,42,.04);
+            border-radius:0;
         }
-        .stat{padding:16px}
+        .stat{padding:14px}
         .stat h2{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
         .stat p{margin:0}
-        .content{display:grid;gap:18px}
-        .section{padding:22px}
-        .section h2{margin:0 0 12px;font-size:22px}
+        .content{display:grid;gap:16px}
+        .section{padding:18px}
+        .section h2{margin:0 0 10px;font-size:21px}
         .section p{margin:0 0 12px}
         .section p:last-child{margin-bottom:0}
         .section ul{margin:8px 0 0 18px;padding:0}
         .section li{margin:6px 0}
-        .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-        .callout{padding:18px;background:linear-gradient(180deg, #ffffff, var(--panel-alt))}
+        .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+        .callout{padding:18px}
         .callout h3{margin:0 0 10px;font-size:18px}
         pre{
             margin:12px 0 0;
-            background:#0f172a;
-            color:#e2e8f0;
-            border-radius:16px;
-            padding:16px;
+            background:var(--code);
+            color:var(--text);
+            border:1px solid var(--line);
+            border-radius:0;
+            padding:14px;
             overflow:auto;
             font:13px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-        }
-        .chips{display:flex;flex-wrap:wrap;gap:8px}
-        .chip{
-            display:inline-flex;
-            align-items:center;
-            padding:6px 10px;
-            border-radius:999px;
-            background:#dbeafe;
-            color:#1e3a8a;
-            border:1px solid #bfdbfe;
-            font-size:14px;
         }
         footer{margin-top:20px;color:var(--muted);font-size:14px}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
         @media print{
-            body{background:#fff}
             .toolbar{display:none}
-            .hero,.stat,.section,.callout{box-shadow:none}
         }
     </style>
 </head>
@@ -141,14 +124,10 @@
                 <span lang="en">NX-Cast is an open-source media receiver for Nintendo Switch homebrew, built around a generic DLNA DMR foundation. The project aims to make playback control and runtime state stay aligned, so control points see an accurate, protocol-compliant device state while the renderer runs real media playback through libmpv.</span>
                 <span lang="zh">NX-Cast 是一个面向 Nintendo Switch Homebrew 的开源媒体接收器，核心是通用化的 DLNA DMR 基础能力。项目目标是让控制协议状态与真实播放运行时保持一致，使控制端看到准确、符合协议的设备状态，同时由 libmpv 驱动实际媒体播放。</span>
             </p>
-            <div class="chips">
-                <span class="chip">DLNA DMR</span>
-                <span class="chip">SSDP</span>
-                <span class="chip">SOAP</span>
-                <span class="chip">GENA</span>
-                <span class="chip">libmpv</span>
-                <span class="chip">OpenGL</span>
-            </div>
+            <p>
+                <span lang="en"><strong>Keywords:</strong> DLNA DMR, SSDP, SOAP, GENA, libmpv, OpenGL</span>
+                <span lang="zh"><strong>关键词：</strong>DLNA DMR、SSDP、SOAP、GENA、libmpv、OpenGL</span>
+            </p>
         </section>
 
         <section class="section">
