@@ -6,12 +6,12 @@
     <title>Skyline Reference Letter - Jiaheng Li</title>
     <style>
         :root{
-            --bg:#f8fafc;
+            --bg:#ffffff;
             --paper:#ffffff;
-            --text:#0f172a;
-            --muted:#475569;
-            --line:#cbd5e1;
-            --accent:#2563eb;
+            --text:#111827;
+            --muted:#52606d;
+            --line:#d1d5db;
+            --accent:#1f2937;
         }
         body{
             margin:0;
@@ -19,25 +19,24 @@
             color:var(--text);
             font:16px/1.7 Georgia, "Times New Roman", serif;
         }
-        .container{max-width:820px;margin:0 auto;padding:28px 20px 60px;}
+        .container{max-width:820px;margin:0 auto;padding:28px 24px 60px;}
         .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
         .btn{
-            border:1px solid var(--accent);
+            border:1px solid var(--line);
             padding:8px 14px;
-            border-radius:999px;
+            border-radius:0;
             text-decoration:none;
-            color:var(--accent);
+            color:var(--text);
             background:#fff;
             cursor:pointer;
             font:14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
         }
-        .btn:hover{background:var(--accent);color:#fff}
+        .btn:hover{background:#f9fafb;border-color:var(--accent)}
         .paper{
             background:var(--paper);
             border:1px solid var(--line);
-            border-radius:18px;
+            border-radius:0;
             padding:36px 40px 44px;
-            box-shadow:0 14px 40px rgba(15,23,42,.06);
         }
         h1{
             margin:0 0 6px;
@@ -50,13 +49,8 @@
             font:14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
         }
         .draft{
-            display:inline-block;
             margin-bottom:16px;
-            padding:5px 10px;
-            border-radius:999px;
-            background:#eff6ff;
-            color:#1d4ed8;
-            border:1px solid #bfdbfe;
+            color:var(--muted);
             font:12px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
             text-transform:uppercase;
             letter-spacing:.08em;
@@ -68,7 +62,7 @@
         @media print{
             body{background:#fff}
             .toolbar{display:none}
-            .paper{box-shadow:none;border:0;padding:0}
+            .paper{border:0;padding:0}
         }
     </style>
 </head>
