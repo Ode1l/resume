@@ -36,6 +36,9 @@
         li{margin:4px 0}
         .btn{border:1px solid var(--line);padding:6px 12px;border-radius:0;text-decoration:none;color:var(--text);background:#fff;cursor:pointer}
         .btn:hover{background:#f9fafb;border-color:var(--accent)}
+        .filter-controls{margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:14px}
+        .filter-controls select{border:1px solid var(--line);background:#fff;color:var(--text);padding:5px 8px;border-radius:0;font:inherit}
+        .skill-hidden{display:none!important}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
         @media print{
@@ -44,8 +47,8 @@
             body{
                 background:white;
                 color:black;
-                font-size:8.4pt;
-                line-height:1.18;
+                font-size:10.5pt;
+                line-height:1.23;
                 -webkit-print-color-adjust:exact;
                 print-color-adjust:exact;
             }
@@ -56,18 +59,18 @@
                 padding-bottom:1.8mm;
             }
             header div[style]{display:none}
-            h1{font-size:17pt;letter-spacing:.3pt}
+            h1{font-size:19.5pt;letter-spacing:.3pt}
             h2{
                 margin:3.6mm 0 1.1mm;
                 padding-bottom:.5mm;
                 border-bottom:.5pt solid #d1d5db;
-                font-size:10pt;
+                font-size:11.5pt;
                 break-after:avoid;
                 page-break-after:avoid;
             }
             h3{
                 margin:2.2mm 0 .7mm;
-                font-size:8.6pt;
+                font-size:10.2pt;
                 break-after:avoid;
                 page-break-after:avoid;
             }
@@ -76,6 +79,7 @@
             li{margin:.25mm 0}
             footer{display:none}
             .btn{display:none}
+            .filter-controls{display:none}
             .muted{color:#333}
             .reference-note{
                 margin:.8mm 0 1.8mm;
@@ -89,7 +93,7 @@
             a[href]::after{
                 content:" <" attr(href) ">";
                 color:#333;
-                font-size:7.4pt;
+                font-size:8.6pt;
                 word-break:break-all;
             }
             a[href^="javascript:"]::after,
@@ -106,15 +110,17 @@
             <button class="btn" id="langToggle">EN / 中文</button>
             <button class="btn" onclick="window.print()"><span lang="en">Print / Save PDF</span><span lang="zh">打印 / 保存 PDF</span></button>
         </div>
+        <div class="filter-controls">
+            <label for="filterPresetSelect"><span lang="en">Skill filter:</span><span lang="zh">技能筛选：</span></label>
+            <select id="filterPresetSelect">
+                <option value="" disabled>Custom filter from URL</option>
+                <option value="fullstack">Full-stack</option>
+                <option value="backend">Backend</option>
+                <option value="ai-fullstack">AI Full-stack</option>
+                <option value="all">Master / All Skills</option>
+            </select>
+        </div>
     </header>
-
-    <section>
-        <h2><span lang="en">Objective</span><span lang="zh">求职目标</span></h2>
-        <p>
-            <span lang="en">Seeking a software developer position to leverage my expertise in full stack development, problem-solving skills, and passion for creating efficient and scalable applications.</span>
-            <span lang="zh">寻求软件开发职位，以发挥全栈开发专长、问题解决能力，以及对构建高效且可扩展应用的热情。</span>
-        </p>
-    </section>
 
     <section>
         <h2><span lang="en">Personal Statement</span><span lang="zh">个人简介</span></h2>
@@ -134,16 +140,16 @@
         </h3>
         <ul>
             <li>
-                <span lang="en">Spearheaded the transformation of traditional SP1 structural calculation books into a modernized engineering software system by integrating C#, React, Python, and Excel-based workflows.</span>
-                <span lang="zh">主导将传统 SP1 结构计算书升级为现代化工程软件系统，集成 C#、React、Python 与 Excel 工作流。</span>
+                <span lang="en">Rebuilt an Excel-based SP1 beam calculation book template as a .NET engineering application, translating spreadsheet formulas and structural engineering workflows into typed domain models and calculation services.</span>
+                <span lang="zh">将基于 Excel 模板的 SP1 梁计算书重构为 .NET 工程应用，将表格公式与结构工程流程转化为类型化领域模型和计算服务。</span>
             </li>
             <li>
-                <span lang="en">Designed and implemented backend services in C# with domain-driven design principles and CI/CD pipelines to automate structural calculations while preserving Excel compatibility for smooth team adoption.</span>
-                <span lang="zh">基于 C# 设计并实现后端服务，采用 DDD 思想与 CI/CD 流水线自动化结构计算，同时保持与 Excel 的兼容性，降低团队迁移成本。</span>
+                <span lang="en">Defined API contracts and implemented the C# calculation kernel for beam analysis and design checks, covering section libraries, load builders, support conditions, reactions, shear, moment, and calculation-book output.</span>
+                <span lang="zh">定义 API 契约并实现 C# 计算内核，覆盖梁分析与设计校核中的截面库、荷载构造、支座条件、反力、剪力、弯矩及计算书输出。</span>
             </li>
             <li>
-                <span lang="en">Refactored the application architecture to improve modularity, service extensibility, and cross-platform runtime compatibility, enabling stable engineering workflows across heterogeneous devices and deployment environments.</span>
-                <span lang="zh">重构应用架构，提升模块化程度、服务扩展能力与跨平台运行兼容性，支撑工程师在异构设备与多类部署环境下稳定协作。</span>
+                <span lang="en">Published the workflow through a React/Vite frontend backed by a .NET API, enabling engineers to enter beam geometry, supports, loads, and material data and review generated calculation-book results in the browser.</span>
+                <span lang="zh">通过 React/Vite 前端与 .NET API 发布计算流程，使工程师能够在浏览器中录入梁几何、支座、荷载与材料数据，并查看生成的计算书结果。</span>
             </li>
         </ul>
         <div class="reference-note">
@@ -180,8 +186,8 @@
         </h3>
         <ul>
             <li>
-                <span lang="en">Developed a jump-start login interface using Spring Boot and RestTemplate to enhance authentication flows.</span>
-                <span lang="zh">使用 Spring Boot 与 RestTemplate 开发快速登录接口，优化认证流程。</span>
+                <span lang="en">Built a Spring Boot quick-login API with RestTemplate-based service integration, improving authentication flow integration across enterprise modules.</span>
+                <span lang="zh">基于 Spring Boot 构建快速登录 API，并通过 RestTemplate 完成服务集成，优化企业模块间的认证流程衔接。</span>
             </li>
             <li>
                 <span lang="en">Delivered secondary feature development for a SaaS platform and built the end-to-end message push module, covering business integration, message dispatch workflows, and module-level backend implementation.</span>
@@ -196,16 +202,12 @@
                 <span lang="zh">面向企业云化交付场景开展开发工作，使后端模块适配 SaaS 部署与多租户业务扩展需求。</span>
             </li>
             <li>
-                <span lang="en">Implemented AOP-based feature upgrades via reverse engineering to extend existing systems.</span>
-                <span lang="zh">通过逆向工程实现基于 AOP 的功能升级，扩展存量系统。</span>
+                <span lang="en">Extended legacy enterprise modules with AOP-based enhancements after analysing existing code paths, runtime behaviour, and integration constraints.</span>
+                <span lang="zh">在分析既有代码路径、运行时行为与集成约束后，通过 AOP 增强方式扩展企业级存量模块。</span>
             </li>
             <li>
                 <span lang="en">Built thread-pool-based processing to support the push of over 100,000 data records, improving throughput and delivery stability under high-concurrency scenarios.</span>
                 <span lang="zh">基于线程池实现十万级数据推送处理，在高并发场景下提升吞吐能力与投递稳定性。</span>
-            </li>
-            <li>
-                <span lang="en">Used Jadx for code analysis to support debugging and enhancements.</span>
-                <span lang="zh">使用 Jadx 进行代码分析，支持调试与功能完善。</span>
             </li>
         </ul>
     </section>
@@ -227,20 +229,12 @@
                 <span lang="zh">面向几乎不具备技术背景的客户，主导需求评估、内容协助、样式方向、Vercel 部署以及额外的日常 IT 支持，完成端到端项目交付。</span>
             </li>
             <li>
-                <span lang="en">Project Value: NZ$2,000</span>
-                <span lang="zh">项目金额：2,000 新西兰元</span>
+                <span lang="en">Delivered as a paid New Zealand client project; client feedback and contact details are available on the project details page.</span>
+                <span lang="zh">作为新西兰本地付费客户项目交付；客户评价与联系方式见项目详情页。</span>
             </li>
             <li>
-                <span lang="en">Client Comment from Jeff: Jiaheng communicated clearly and patiently, helped us define requirements we could not express ourselves, and provided reliable support well beyond the website build.</span>
-                <span lang="zh">Jeff 客户评价：Jiaheng 沟通清晰且有耐心，能够帮助我们明确自身难以表达的需求，并在网站开发之外持续提供可靠支持。</span>
-            </li>
-            <li>
-                <span lang="en">Links: <a href="projects/haven-build-group.html">Project Details</a> · <span class="muted">Client contact: Jeff Zhang · +64 20 414 00863 · jeff@havenbuildgroup.co.nz</span></span>
-                <span lang="zh">链接：<a href="projects/haven-build-group.html">项目详情</a> · <span class="muted">客户联系人：Jeff Zhang · +64 20 414 00863 · jeff@havenbuildgroup.co.nz</span></span>
-            </li>
-            <li>
-                <span lang="en">Website: <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · Commercial source code is proprietary and not open-source.</span>
-                <span lang="zh">网站：<a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · 商用源码为专有代码，不开源。</span>
+                <span lang="en">Links: <a href="projects/haven-build-group.html">Project Details</a> · <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · Commercial source code is proprietary and not open-source.</span>
+                <span lang="zh">链接：<a href="projects/haven-build-group.html">项目详情</a> · <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · 商用源码为专有代码，不开源。</span>
             </li>
             <li>
                 <span lang="en">Tech Stack: React, TypeScript, Vercel, SEO, Responsive UI</span>
@@ -298,45 +292,49 @@
     <section>
         <h2><span lang="en">Technical Skills</span><span lang="zh">技术技能</span></h2>
         <ul>
-            <li>
+            <li data-filter="fullstack backend ai-fullstack java spring csharp dotnet api">
                 <span lang="en">Backend: Java (Spring Boot, Spring MVC), C# (.NET Core, ASP.NET)</span>
                 <span lang="zh">后端：Java（Spring Boot，Spring MVC）、C#（.NET Core，ASP.NET）</span>
             </li>
-            <li>
-                <span lang="en">Frontend: React.js, WebRTC, SEO, Frontend Engineering &amp; Build Optimization (Webpack/Vite), V8 Rendering Engine, Browser Event Loop &amp; Message Queue, TypeScript</span>
-                <span lang="zh">前端：React.js、WebRTC, SEO、前端工程与构建优化（Webpack/Vite）、V8 渲染引擎、浏览器事件循环与消息队列、TypeScript</span>
+            <li data-filter="fullstack ai-fullstack frontend react typescript webrtc seo vite browser">
+                <span lang="en">Frontend: React.js, TypeScript, WebRTC, SEO, frontend build optimization (Webpack/Vite), browser runtime fundamentals</span>
+                <span lang="zh">前端：React.js、TypeScript、WebRTC、SEO、前端构建优化（Webpack/Vite）、浏览器运行时基础</span>
             </li>
-            <li>
+            <li data-filter="fullstack backend ai-fullstack database sql postgresql oracle mybatis prisma mongodb">
                 <span lang="en">Database: PostgreSQL, Oracle, SQL query design, joins, indexing fundamentals, transactions, query optimization, MyBatis, Prisma ORM, MongoDB</span>
                 <span lang="zh">数据库：PostgreSQL、Oracle、SQL 查询设计、表连接、索引基础、事务、查询优化、MyBatis、Prisma ORM、MongoDB</span>
             </li>
-            <li>
+            <li data-filter="fullstack ai-fullstack ai rag mcp agent">
                 <span lang="en">AI Engineering: RAG, MCP Server, Agent Development</span>
                 <span lang="zh">AI 工程：RAG、MCP Server、Agent 开发</span>
             </li>
-            <li>
+            <li data-filter="fullstack backend ai-fullstack architecture delivery design-patterns ddd cicd">
                 <span lang="en">Architecture &amp; Delivery: Design Patterns, DDD, CI/CD</span>
                 <span lang="zh">架构与交付：设计模式、DDD、CI/CD</span>
             </li>
-            <li>
+            <li data-filter="fullstack backend ai-fullstack cloud aws azure linux windows-server vps terraform iac">
                 <span lang="en">Servers &amp; Cloud: Linux, Windows Server, AWS, Azure, VPS Provisioning, Terraform, Cloud Instance Configuration</span>
                 <span lang="zh">服务器与云平台：Linux、Windows Server、AWS、Azure、VPS 划分与部署、Terraform、云主机配置</span>
             </li>
-            <li>
-                <span lang="en">Distributed Systems: Distributed and Parallel Computing Fundamentals, Concurrent Processing, Thread Pools</span>
-                <span lang="zh">分布式系统：分布式与并行计算基础、并发处理、线程池</span>
+            <li data-filter="backend ai-fullstack concurrency distributed thread-pool parallel">
+                <span lang="en">Concurrency &amp; Distributed Systems: thread pools, concurrent processing, distributed and parallel computing fundamentals</span>
+                <span lang="zh">并发与分布式系统：线程池、并发处理、分布式与并行计算基础</span>
             </li>
-            <li>
+            <li data-filter="backend algorithms data-structures">
                 <span lang="en">Algorithms &amp; Data Structures: Trees, Graphs, Sorting, Search Algorithms</span>
                 <span lang="zh">算法与数据结构：树、图、排序、搜索算法</span>
             </li>
-            <li>
-                <span lang="en">Networking &amp; Security: TLS/SSL, Cisco, X.509 Certificate, Cybersecurity</span>
-                <span lang="zh">网络与安全：TLS/SSL、思科、X.509 证书、网络安全</span>
+            <li data-filter="backend networking security tls certificates auth">
+                <span lang="en">Networking &amp; Security: TLS/SSL, X.509 certificates, authentication and basic network security</span>
+                <span lang="zh">网络与安全：TLS/SSL、X.509 证书、认证机制与基础网络安全</span>
             </li>
-            <li>
-                <span lang="en">Automation &amp; Tools: FFmpeg, libmpv, Python (Scrapy, Selenium, BeautifulSoup), OCR, JWT</span>
-                <span lang="zh">自动化与工具：FFmpeg、libmpv、Python（Scrapy、Selenium、BeautifulSoup）、OCR、JWT</span>
+            <li data-filter="fullstack backend ai-fullstack automation python scraping selenium jwt ocr">
+                <span lang="en">Automation &amp; Developer Tools: Python automation (Scrapy, Selenium, BeautifulSoup), JWT, OCR</span>
+                <span lang="zh">自动化与开发工具：Python 自动化（Scrapy、Selenium、BeautifulSoup）、JWT、OCR</span>
+            </li>
+            <li data-filter="master systems media ffmpeg libmpv opengl">
+                <span lang="en">Systems &amp; Media Tooling: FFmpeg, libmpv, OpenGL-adjacent media pipeline experience</span>
+                <span lang="zh">系统与媒体工具：FFmpeg、libmpv、OpenGL 相关媒体链路经验</span>
             </li>
         </ul>
     </section>
@@ -349,16 +347,8 @@
                 <span lang="zh">语言：英语（熟练）、中文（母语）</span>
             </li>
             <li>
-                <span lang="en">Critical Thinking: Flexible use of logic</span>
-                <span lang="zh">批判性思维：灵活运用逻辑思考</span>
-            </li>
-            <li>
-                <span lang="en">Time Management &amp; Organization: Strong planning and prioritization, on-time delivery</span>
-                <span lang="zh">时间管理与组织：擅长计划与优先排序，保证按时交付</span>
-            </li>
-            <li>
-                <span lang="en">Communication: Effective with teams, stakeholders, and non-technical audiences</span>
-                <span lang="zh">沟通：善于与团队、利益相关者及非技术人员高效沟通</span>
+                <span lang="en">Communication &amp; Delivery: able to translate ambiguous business needs into practical software requirements for non-technical stakeholders.</span>
+                <span lang="zh">沟通与交付：能够将模糊业务需求转化为面向非技术利益相关者的可执行软件需求。</span>
             </li>
             <li>
                 <span lang="en">Interdisciplinary Literacy: Economics, philosophy, and history studies strengthen business awareness, structured reasoning, and human-centered judgment.</span>
@@ -397,20 +387,72 @@
     (function(){
         const html = document.documentElement;
         const btn = document.getElementById('langToggle');
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        if(urlLang){
-            html.setAttribute('lang', urlLang);
-            localStorage.setItem('lang', urlLang);
-        } else {
-            const saved = localStorage.getItem('lang');
-            if(saved){html.setAttribute('lang', saved);}
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = params.get('lang') === 'zh' ? 'zh' : 'en';
+
+        html.setAttribute('lang', urlLang);
+        if(!params.has('lang')){
+            params.set('lang', 'en');
+            history.replaceState(null, '', `${window.location.pathname}?${params.toString()}${window.location.hash}`);
         }
+
         btn.addEventListener('click', ()=>{
             const next = html.getAttribute('lang')==='zh' ? 'en' : 'zh';
             html.setAttribute('lang', next);
-            localStorage.setItem('lang', next);
+            const nextParams = new URLSearchParams(window.location.search);
+            nextParams.set('lang', next);
+            history.replaceState(null, '', `${window.location.pathname}?${nextParams.toString()}${window.location.hash}`);
         });
+    })();
+
+    (function(){
+        const presetFilters = {
+            fullstack: ['fullstack'],
+            backend: ['backend'],
+            'ai-fullstack': ['ai-fullstack'],
+            all: ['all']
+        };
+        const select = document.getElementById('filterPresetSelect');
+        const params = new URLSearchParams(window.location.search);
+        const legacyProfile = params.get('profile');
+        const legacyFilter = legacyProfile === 'master' ? 'all' : legacyProfile;
+        const requestedFilter = params.get('filter') || (legacyFilter && presetFilters[legacyFilter] ? legacyFilter : 'fullstack');
+
+        function parseFilter(value){
+            return value
+                .split(',')
+                .map((tag)=>tag.trim().toLowerCase())
+                .filter(Boolean);
+        }
+
+        function applyFilter(filterValue){
+            const selectedTags = parseFilter(filterValue);
+            const showAll = selectedTags.length === 0 || selectedTags.includes('all');
+            document.documentElement.dataset.activeFilter = showAll ? 'all' : selectedTags.join(',');
+            document.querySelectorAll('li[data-filter]').forEach((item)=>{
+                const tags = item.dataset.filter.split(/\s+/).map((tag)=>tag.toLowerCase());
+                const visible = showAll || selectedTags.some((tag)=>tags.includes(tag));
+                item.classList.toggle('skill-hidden', !visible);
+            });
+            if(select){
+                const preset = Object.entries(presetFilters)
+                    .find(([, tags])=>tags.length === selectedTags.length && tags.every((tag)=>selectedTags.includes(tag)));
+                select.value = preset ? preset[0] : '';
+            }
+        }
+
+        applyFilter(requestedFilter);
+
+        if(select){
+            select.addEventListener('change', ()=>{
+                const next = presetFilters[select.value].join(',');
+                applyFilter(next);
+                const nextParams = new URLSearchParams(window.location.search);
+                nextParams.delete('profile');
+                nextParams.set('filter', next);
+                history.replaceState(null, '', `${window.location.pathname}?${nextParams.toString()}${window.location.hash}`);
+            });
+        }
     })();
 </script>
 </body>
