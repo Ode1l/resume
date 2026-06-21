@@ -36,8 +36,6 @@
         li{margin:4px 0}
         .btn{border:1px solid var(--line);padding:6px 12px;border-radius:0;text-decoration:none;color:var(--text);background:#fff;cursor:pointer}
         .btn:hover{background:#f9fafb;border-color:var(--accent)}
-        .filter-controls{margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:14px}
-        .filter-controls select{border:1px solid var(--line);background:#fff;color:var(--text);padding:5px 8px;border-radius:0;font:inherit}
         .skill-hidden{display:none!important}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
@@ -79,7 +77,6 @@
             li{margin:.25mm 0}
             footer{display:none}
             .btn{display:none}
-            .filter-controls{display:none}
             .muted{color:#333}
             .reference-note{
                 margin:.8mm 0 1.8mm;
@@ -109,16 +106,6 @@
         <div style="margin-top:10px">
             <button class="btn" id="langToggle">EN / 中文</button>
             <button class="btn" onclick="window.print()"><span lang="en">Print / Save PDF</span><span lang="zh">打印 / 保存 PDF</span></button>
-        </div>
-        <div class="filter-controls">
-            <label for="filterPresetSelect"><span lang="en">Skill filter:</span><span lang="zh">技能筛选：</span></label>
-            <select id="filterPresetSelect">
-                <option value="" disabled>Custom filter from URL</option>
-                <option value="fullstack">Full-stack</option>
-                <option value="backend">Backend</option>
-                <option value="ai-fullstack">AI Full-stack</option>
-                <option value="all">Master / All Skills</option>
-            </select>
         </div>
     </header>
 
@@ -406,17 +393,11 @@
     })();
 
     (function(){
-        const presetFilters = {
-            fullstack: ['fullstack'],
-            backend: ['backend'],
-            'ai-fullstack': ['ai-fullstack'],
-            all: ['all']
-        };
-        const select = document.getElementById('filterPresetSelect');
         const params = new URLSearchParams(window.location.search);
         const legacyProfile = params.get('profile');
+        const legacyFilters = new Set(['fullstack', 'backend', 'ai-fullstack']);
         const legacyFilter = legacyProfile === 'master' ? 'all' : legacyProfile;
-        const requestedFilter = params.get('filter') || (legacyFilter && presetFilters[legacyFilter] ? legacyFilter : 'fullstack');
+        const requestedFilter = params.get('filter') || (legacyFilter && legacyFilters.has(legacyFilter) ? legacyFilter : 'fullstack');
 
         function parseFilter(value){
             return value
@@ -434,25 +415,9 @@
                 const visible = showAll || selectedTags.some((tag)=>tags.includes(tag));
                 item.classList.toggle('skill-hidden', !visible);
             });
-            if(select){
-                const preset = Object.entries(presetFilters)
-                    .find(([, tags])=>tags.length === selectedTags.length && tags.every((tag)=>selectedTags.includes(tag)));
-                select.value = preset ? preset[0] : '';
-            }
         }
 
         applyFilter(requestedFilter);
-
-        if(select){
-            select.addEventListener('change', ()=>{
-                const next = presetFilters[select.value].join(',');
-                applyFilter(next);
-                const nextParams = new URLSearchParams(window.location.search);
-                nextParams.delete('profile');
-                nextParams.set('filter', next);
-                history.replaceState(null, '', `${window.location.pathname}?${nextParams.toString()}${window.location.hash}`);
-            });
-        }
     })();
 </script>
 </body>
