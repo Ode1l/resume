@@ -36,6 +36,8 @@
             font:inherit;
         }
         .btn:hover{background:#f9fafb;border-color:var(--accent)}
+        .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+        .btn-primary:hover{background:#111827;color:#fff}
         .hero{
             border-bottom:1px solid var(--line);
             padding-bottom:18px;
@@ -53,18 +55,25 @@
         .stat{padding:14px}
         .stat h2{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
         .stat p{margin:0}
-        .content{display:grid;gap:16px}
+        .content{display:grid;gap:16px;min-width:0}
         .section{padding:18px}
+        .section,.callout,.gallery,.shot{min-width:0}
         .section h2{margin:0 0 10px;font-size:21px}
         .section p{margin:0 0 12px}
         .section p:last-child{margin-bottom:0}
         .section ul{margin:8px 0 0 18px;padding:0}
         .section li{margin:6px 0}
         .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+        .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+        .shot{margin:0;border:1px solid var(--line);background:#f8fafc}
+        .shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+        .shot figcaption{padding:12px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.55}
+        .shot strong{display:block;color:var(--text);font-size:15px;margin-bottom:2px}
         .callout{padding:18px}
         .callout h3{margin:0 0 10px;font-size:18px}
         pre{
             margin:12px 0 0;
+            max-width:100%;
             background:var(--code);
             color:var(--text);
             border:1px solid var(--line);
@@ -76,6 +85,9 @@
         footer{margin-top:20px;color:var(--muted);font-size:14px}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
+        @media (max-width:700px){
+            .gallery{grid-template-columns:1fr}
+        }
         @media print{
             .toolbar{display:none}
         }
@@ -85,6 +97,7 @@
 <div class="container">
     <div class="toolbar">
         <a class="btn" href="../index.html#works"><span lang="en">Back to Resume</span><span lang="zh">返回简历</span></a>
+        <a class="btn btn-primary" href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Play Gomoku</span><span lang="zh">在线游玩</span></a>
         <a class="btn" href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a>
         <button class="btn" id="langToggle">EN / 中文</button>
     </div>
@@ -111,8 +124,8 @@
                 <p>TypeScript, WebRTC DataChannel, WebSocket, FSM, State Hash, Snapshot Sync</p>
             </div>
             <div class="stat">
-                <h2><span lang="en">Repository</span><span lang="zh">仓库</span></h2>
-                <p><a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">github.com/Ode1l/p2p-lockstep-kit</a></p>
+                <h2><span lang="en">Links</span><span lang="zh">链接</span></h2>
+                <p><a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Live Demo</span><span lang="zh">在线演示</span></a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a></p>
             </div>
         </div>
     </header>
@@ -128,6 +141,28 @@
                 <span lang="en"><strong>Keywords:</strong> Command Bus, Session FSM, State Sync, Reconnect Recovery, Plugin Hooks</span>
                 <span lang="zh"><strong>关键词：</strong>Command Bus、Session FSM、State Sync、Reconnect Recovery、Plugin Hooks</span>
             </p>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">Product Walkthrough</span><span lang="zh">产品界面</span></h2>
+            <div class="gallery">
+                <figure class="shot">
+                    <img src="assets/p2p-lockstep-kit-pairing.png" alt="P2P Gomoku pairing screen with a QR code and peer connection controls" loading="eager" />
+                    <figcaption>
+                        <strong><span lang="en">Peer pairing and session registration</span><span lang="zh">对等配对与会话注册</span></strong>
+                        <span lang="en">Players can register a room, share it by QR code, and connect directly through the WebRTC signaling flow.</span>
+                        <span lang="zh">玩家可以注册房间、通过二维码分享，并经由 WebRTC 信令流程建立直接连接。</span>
+                    </figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="assets/p2p-lockstep-kit-gameplay.png" alt="Gomoku board showing a live lockstep game and session state details" loading="lazy" />
+                    <figcaption>
+                        <strong><span lang="en">Responsive gameplay and lockstep state</span><span lang="zh">响应式对局与 Lockstep 状态</span></strong>
+                        <span lang="en">The reusable game shell connects board input, turn ownership, action controls, and synchronized session state.</span>
+                        <span lang="zh">可复用游戏外壳将棋盘输入、回合控制、操作按钮与同步会话状态连接起来。</span>
+                    </figcaption>
+                </figure>
+            </div>
         </section>
 
         <section class="section">
