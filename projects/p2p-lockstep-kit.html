@@ -64,7 +64,7 @@
         .section ul{margin:8px 0 0 18px;padding:0}
         .section li{margin:6px 0}
         .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-        .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+        .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
         .shot{margin:0;border:1px solid var(--line);background:#f8fafc}
         .shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
         .shot figcaption{padding:12px 14px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.55}
@@ -98,6 +98,7 @@
     <div class="toolbar">
         <a class="btn" href="../index.html#works"><span lang="en">Back to Resume</span><span lang="zh">返回简历</span></a>
         <a class="btn btn-primary" href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Play Gomoku</span><span lang="zh">在线游玩</span></a>
+        <a class="btn btn-primary" href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Play Chess</span><span lang="zh">国际象棋</span></a>
         <a class="btn" href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a>
         <button class="btn" id="langToggle">EN / 中文</button>
     </div>
@@ -125,7 +126,7 @@
             </div>
             <div class="stat">
                 <h2><span lang="en">Links</span><span lang="zh">链接</span></h2>
-                <p><a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Live Demo</span><span lang="zh">在线演示</span></a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                <p><a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Gomoku</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Chess</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a></p>
             </div>
         </div>
     </header>
@@ -162,7 +163,27 @@
                         <span lang="zh">可复用游戏外壳将棋盘输入、回合控制、操作按钮与同步会话状态连接起来。</span>
                     </figcaption>
                 </figure>
+                <figure class="shot">
+                    <img src="assets/p2p-lockstep-kit-chess.jpg" alt="Chess peer pairing screen with share QR code and WebRTC connection controls" loading="lazy" />
+                    <figcaption>
+                        <strong><span lang="en">Chess application built on the same kit</span><span lang="zh">基于同一工具包构建的国际象棋</span></strong>
+                        <span lang="en">A second production deployment demonstrates that the session runtime, pairing UI, and game-plugin contract are reusable beyond one game.</span>
+                        <span lang="zh">第二个线上应用证明会话运行时、配对界面与游戏插件契约能够跨游戏复用。</span>
+                    </figcaption>
+                </figure>
             </div>
+        </section>
+
+        <section class="section">
+            <h2><span lang="en">AI Agent Skill</span><span lang="zh">AI Agent Skill</span></h2>
+            <p>
+                <span lang="en">I published an installable <code>build-p2p-lockstep-game</code> Skill that gives AI coding agents the integration contract, deterministic replay model, game-rule plugin pattern, responsive UI requirements, test strategy, and Cloudflare deployment workflow needed to build compatible games.</span>
+                <span lang="zh">我发布了可安装的 <code>build-p2p-lockstep-game</code> Skill，为 AI 编码 Agent 提供兼容游戏所需的集成契约、确定性回放模型、游戏规则插件模式、响应式 UI 要求、测试策略与 Cloudflare 部署流程。</span>
+            </p>
+            <p>
+                <span lang="en">The Skill converts project-specific architectural knowledge into reusable instructions and includes an automated verifier, reducing learning cost while keeping generated applications aligned with runtime invariants.</span>
+                <span lang="zh">该 Skill 将项目架构知识沉淀为可复用指令，并包含自动验证脚本，在降低学习成本的同时确保生成应用遵守运行时约束。</span>
+            </p>
         </section>
 
         <section class="section">
@@ -182,6 +203,7 @@
                 <li><span lang="en">A transition-table-driven FSM to control lobby, gameplay, approval, syncing, and offline states.</span><span lang="zh">基于状态迁移表的 FSM，用于控制大厅、对局、审批、同步和离线状态。</span></li>
                 <li><span lang="en">State-hash validation, pending-action coordination, and snapshot sync hooks to support consistency checks and recovery.</span><span lang="zh">实现状态哈希校验、待审批动作协调和快照同步钩子，用于支撑一致性校验与故障恢复。</span></li>
                 <li><span lang="en">Plugin-style extension points for game-specific legality checks and win-condition handling.</span><span lang="zh">预留插件式扩展点，用于接入具体游戏的规则校验与胜负判定。</span></li>
+                <li><span lang="en">Playable Gomoku and international Chess deployments plus an Agent Skill and verifier for repeatable AI-assisted game creation.</span><span lang="zh">发布可游玩的五子棋与国际象棋应用，并提供 Agent Skill 与验证器支持可重复的 AI 辅助游戏开发。</span></li>
             </ul>
         </section>
 
