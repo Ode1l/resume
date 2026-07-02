@@ -37,16 +37,17 @@
         .btn{border:1px solid var(--line);padding:6px 12px;border-radius:0;text-decoration:none;color:var(--text);background:#fff;cursor:pointer}
         .btn:hover{background:#f9fafb;border-color:var(--accent)}
         .skill-hidden{display:none!important}
+        .print-url{display:none}
         html[lang="en"] [lang="zh"]{display:none}
         html[lang="zh"] [lang="en"]{display:none}
         @media print{
-            @page{size:A4;margin:8mm 9mm}
+            @page{size:A4;margin:7.5mm 9mm}
             *{box-shadow:none!important;text-shadow:none!important}
             body{
                 background:white;
                 color:black;
                 font-size:10.5pt;
-                line-height:1.23;
+                line-height:1.20;
                 -webkit-print-color-adjust:exact;
                 print-color-adjust:exact;
             }
@@ -59,7 +60,7 @@
             header div[style]{display:none}
             h1{font-size:19.5pt;letter-spacing:.3pt}
             h2{
-                margin:3.6mm 0 1.1mm;
+                margin:3.3mm 0 1mm;
                 padding-bottom:.5mm;
                 border-bottom:.5pt solid #d1d5db;
                 font-size:11.5pt;
@@ -67,14 +68,14 @@
                 page-break-after:avoid;
             }
             h3{
-                margin:2.2mm 0 .7mm;
+                margin:2mm 0 .6mm;
                 font-size:10.2pt;
                 break-after:avoid;
                 page-break-after:avoid;
             }
-            p{margin:0 0 1.1mm}
-            ul{margin:.7mm 0 1.5mm 4mm;padding-left:3mm}
-            li{margin:.25mm 0}
+            p{margin:0 0 1mm}
+            ul{margin:.6mm 0 1.3mm 4mm;padding-left:3mm}
+            li{margin:.2mm 0}
             footer{display:none}
             .btn{display:none}
             .muted{color:#333}
@@ -87,14 +88,12 @@
             .reference-note p{margin:0 0 .8mm}
             .reference-note p:last-child{margin-bottom:0}
             a{color:black;text-decoration:underline;text-decoration-thickness:.4pt}
-            a[href]::after{
-                content:" <" attr(href) ">";
+            .print-url{
+                display:inline;
                 color:#333;
-                font-size:8.6pt;
+                font-size:8.3pt;
                 word-break:break-all;
             }
-            a[href^="javascript:"]::after,
-            a[href^="#"]::after{content:""}
         }
     </style>
 </head>
@@ -240,8 +239,8 @@
                 <span lang="zh">为新西兰本地非技术客户交付付费商业官网及额外 IT 支持，覆盖需求评估、内容协助、Vercel 部署、SEO 与响应式界面。</span>
             </li>
             <li>
-                <span lang="en">Links: <a href="projects/haven-build-group.html">Project Details</a> · <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · Tech Stack: React, TypeScript, Vercel</span>
-                <span lang="zh">链接：<a href="projects/haven-build-group.html">项目详情</a> · <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · 技术栈：React、TypeScript、Vercel</span>
+                <span lang="en">Links: <a href="https://ode1l.github.io/resume/projects/haven-build-group.html">Project Details</a> · <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · Tech Stack: React, TypeScript, Vercel</span>
+                <span lang="zh">链接：<a href="https://ode1l.github.io/resume/projects/haven-build-group.html">项目详情</a> · <a href="https://havenbuildgroup.co.nz" target="_blank" rel="noopener noreferrer">havenbuildgroup.co.nz</a> · 技术栈：React、TypeScript、Vercel</span>
             </li>
         </ul>
 
@@ -259,8 +258,8 @@
                 <span lang="zh">发布可复用的 AI Agent Skill，覆盖工具包集成、确定性游戏插件、回放、测试与 Cloudflare 部署，降低 AI 辅助开发的学习与实现成本。</span>
             </li>
             <li>
-                <span lang="en">Links: <a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Play Gomoku</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Play Chess</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="projects/p2p-lockstep-kit.html">Project Details</a> · Tech Stack: TypeScript, WebRTC, WebSocket, Agent Skills</span>
-                <span lang="zh">链接：<a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">五子棋</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">国际象棋</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="projects/p2p-lockstep-kit.html">项目详情</a> · 技术栈：TypeScript、WebRTC、WebSocket、Agent Skills</span>
+                <span lang="en">Links: <a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Play Gomoku</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Play Chess</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://ode1l.github.io/resume/projects/p2p-lockstep-kit.html">Project Details</a> · Tech Stack: TypeScript, WebRTC, WebSocket, Agent Skills</span>
+                <span lang="zh">链接：<a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">五子棋</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">国际象棋</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://ode1l.github.io/resume/projects/p2p-lockstep-kit.html">项目详情</a> · 技术栈：TypeScript、WebRTC、WebSocket、Agent Skills</span>
             </li>
         </ul>
 
@@ -293,8 +292,8 @@
                 <span lang="zh">开发面向 Nintendo Switch Homebrew 的 DLNA DMR 媒体接收器，实现 SSDP、SOAP、GENA、FFmpeg/libmpv 播放集成与 OpenGL 渲染。</span>
             </li>
             <li>
-                <span lang="en">Links: <a href="https://github.com/Ode1l/NX-Cast" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="projects/nx-cast.html">Project Details</a> · Tech Stack: C, libnx, DLNA/UPnP, FFmpeg, libmpv</span>
-                <span lang="zh">链接：<a href="https://github.com/Ode1l/NX-Cast" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="projects/nx-cast.html">项目详情</a> · 技术栈：C、libnx、DLNA/UPnP、FFmpeg、libmpv</span>
+                <span lang="en">Links: <a href="https://github.com/Ode1l/NX-Cast" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://ode1l.github.io/resume/projects/nx-cast.html">Project Details</a> · Tech Stack: C, libnx, DLNA/UPnP, FFmpeg, libmpv</span>
+                <span lang="zh">链接：<a href="https://github.com/Ode1l/NX-Cast" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://ode1l.github.io/resume/projects/nx-cast.html">项目详情</a> · 技术栈：C、libnx、DLNA/UPnP、FFmpeg、libmpv</span>
             </li>
         </ul>
     </section>
@@ -385,8 +384,8 @@
         <h2><span lang="en">References</span><span lang="zh">推荐人</span></h2>
         <ul>
             <li>
-                <span lang="en">Hongchang Zhang, Director, Skyline Consulting Engineers Limited · Phone: 029 128 6676 · Email: skyline.consulting.96@gmail.com · <a href="references/skyline-reference-letter.html">Reference letter</a></span>
-                <span lang="zh">Hongchang Zhang，Director，Skyline Consulting Engineers Limited · 电话：029 128 6676 · 邮箱：skyline.consulting.96@gmail.com · <a href="references/skyline-reference-letter.html">推荐信</a></span>
+                <span lang="en">Hongchang Zhang, Director, Skyline Consulting Engineers Limited · Phone: 029 128 6676 · Email: skyline.consulting.96@gmail.com · <a href="https://ode1l.github.io/resume/references/skyline-reference-letter.html">Reference letter</a></span>
+                <span lang="zh">Hongchang Zhang，Director，Skyline Consulting Engineers Limited · 电话：029 128 6676 · 邮箱：skyline.consulting.96@gmail.com · <a href="https://ode1l.github.io/resume/references/skyline-reference-letter.html">推荐信</a></span>
             </li>
             <li>
                 <span lang="en">Francis Tscheliski · Phone: 020 4118 6617</span>
@@ -447,6 +446,39 @@
         }
 
         applyFilter(requestedFilter);
+    })();
+
+    (function(){
+        const portfolioBase = 'https://ode1l.github.io/resume/';
+
+        function preparePrintLinks(){
+            document.querySelectorAll('a[href]').forEach((link)=>{
+                const originalHref = link.getAttribute('href');
+                if(!originalHref || originalHref.startsWith('#') || originalHref.startsWith('javascript:')) return;
+                if(link.querySelector('.print-url')) return;
+
+                const printHref = new URL(originalHref, portfolioBase).href;
+                link.dataset.printOriginalHref = originalHref;
+                link.setAttribute('href', printHref);
+
+                const url = document.createElement('span');
+                url.className = 'print-url';
+                url.setAttribute('aria-hidden', 'true');
+                url.textContent = ` <${printHref}>`;
+                link.appendChild(url);
+            });
+        }
+
+        function restoreScreenLinks(){
+            document.querySelectorAll('a[data-print-original-href]').forEach((link)=>{
+                link.setAttribute('href', link.dataset.printOriginalHref);
+                delete link.dataset.printOriginalHref;
+                link.querySelector('.print-url')?.remove();
+            });
+        }
+
+        window.addEventListener('beforeprint', preparePrintLinks);
+        window.addEventListener('afterprint', restoreScreenLinks);
     })();
 </script>
 </body>
