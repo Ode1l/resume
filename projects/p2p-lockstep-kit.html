@@ -99,6 +99,7 @@
         <a class="btn" href="../index.html#works"><span lang="en">Back to Resume</span><span lang="zh">返回简历</span></a>
         <a class="btn btn-primary" href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Play Gomoku</span><span lang="zh">在线游玩</span></a>
         <a class="btn btn-primary" href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Play Chess</span><span lang="zh">国际象棋</span></a>
+        <a class="btn btn-primary" href="https://xiangqi.jiahengli.xyz" target="_blank" rel="noopener noreferrer"><span lang="en">Play Xiangqi</span><span lang="zh">中国象棋</span></a>
         <a class="btn" href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a>
         <button class="btn" id="langToggle">EN / 中文</button>
     </div>
@@ -126,7 +127,7 @@
             </div>
             <div class="stat">
                 <h2><span lang="en">Links</span><span lang="zh">链接</span></h2>
-                <p><a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Gomoku</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Chess</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                <p><a href="https://gomoku.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Gomoku</a> · <a href="https://chess.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Chess</a> · <a href="https://xiangqi.jiahengli.xyz" target="_blank" rel="noopener noreferrer">Xiangqi</a> · <a href="https://github.com/Ode1l/p2p-lockstep-kit" target="_blank" rel="noopener noreferrer">Kit</a> · <a href="https://github.com/Ode1l/Xiangqi" target="_blank" rel="noopener noreferrer">Xiangqi Source</a></p>
             </div>
         </div>
     </header>
@@ -135,8 +136,8 @@
         <section class="section">
             <h2><span lang="en">Overview</span><span lang="zh">项目概述</span></h2>
             <p>
-                <span lang="en">This project was built to provide a reusable networking and session layer for browser turn-based games such as gomoku, chess, and other strategy titles. Instead of coupling game rules, UI actions, and WebRTC negotiation into one code path, I separated them into a transport layer, a session layer, and game-specific extension points.</span>
-                <span lang="zh">这个项目的目标是为浏览器端回合制游戏，例如五子棋、国际象棋等策略类场景，提供可复用的网络与会话层。项目没有把游戏规则、UI 交互与 WebRTC 协商耦合在同一条链路里，而是拆分为传输层、会话层和游戏专属扩展点。</span>
+                <span lang="en">This project was built to provide a reusable networking and session layer for browser turn-based games such as Gomoku, international Chess, and Xiangqi. Instead of coupling game rules, UI actions, and WebRTC negotiation into one code path, I separated them into a transport layer, a session layer, and game-specific extension points.</span>
+                <span lang="zh">这个项目的目标是为浏览器端回合制游戏，例如五子棋、国际象棋与中国象棋，提供可复用的网络与会话层。项目没有把游戏规则、UI 交互与 WebRTC 协商耦合在同一条链路里，而是拆分为传输层、会话层和游戏专属扩展点。</span>
             </p>
             <p>
                 <span lang="en"><strong>Keywords:</strong> Command Bus, Session FSM, State Sync, Reconnect Recovery, Plugin Hooks</span>
@@ -167,8 +168,8 @@
                     <img src="assets/p2p-lockstep-kit-chess.jpg" alt="Chess peer pairing screen with share QR code and WebRTC connection controls" loading="lazy" />
                     <figcaption>
                         <strong><span lang="en">Chess application built on the same kit</span><span lang="zh">基于同一工具包构建的国际象棋</span></strong>
-                        <span lang="en">A second production deployment demonstrates that the session runtime, pairing UI, and game-plugin contract are reusable beyond one game.</span>
-                        <span lang="zh">第二个线上应用证明会话运行时、配对界面与游戏插件契约能够跨游戏复用。</span>
+                        <span lang="en">Another production deployment demonstrates that the session runtime, pairing UI, and game-plugin contract are reusable beyond one game.</span>
+                        <span lang="zh">另一个线上应用证明会话运行时、配对界面与游戏插件契约能够跨游戏复用。</span>
                     </figcaption>
                 </figure>
             </div>
@@ -203,7 +204,8 @@
                 <li><span lang="en">A transition-table-driven FSM to control lobby, gameplay, approval, syncing, and offline states.</span><span lang="zh">基于状态迁移表的 FSM，用于控制大厅、对局、审批、同步和离线状态。</span></li>
                 <li><span lang="en">State-hash validation, pending-action coordination, and snapshot sync hooks to support consistency checks and recovery.</span><span lang="zh">实现状态哈希校验、待审批动作协调和快照同步钩子，用于支撑一致性校验与故障恢复。</span></li>
                 <li><span lang="en">Plugin-style extension points for game-specific legality checks and win-condition handling.</span><span lang="zh">预留插件式扩展点，用于接入具体游戏的规则校验与胜负判定。</span></li>
-                <li><span lang="en">Playable Gomoku and international Chess deployments plus an Agent Skill and verifier for repeatable AI-assisted game creation.</span><span lang="zh">发布可游玩的五子棋与国际象棋应用，并提供 Agent Skill 与验证器支持可重复的 AI 辅助游戏开发。</span></li>
+                <li><span lang="en">A history-replayed Xiangqi rules engine covering horse-leg and elephant-eye blocking, river and palace restrictions, cannon screens, flying generals, self-check rejection, and no-legal-move losses.</span><span lang="zh">基于历史回放实现中国象棋规则引擎，覆盖蹩马腿、塞象眼、过河与九宫限制、炮架、将帅照面、自将暴露以及无合法着法判负。</span></li>
+                <li><span lang="en">Playable Gomoku, international Chess, and Xiangqi deployments plus an Agent Skill and verifier for repeatable AI-assisted game creation.</span><span lang="zh">发布可游玩的五子棋、国际象棋与中国象棋应用，并提供 Agent Skill 与验证器支持可重复的 AI 辅助游戏开发。</span></li>
             </ul>
         </section>
 
