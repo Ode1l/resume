@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Jiaheng Li - Full-Stack Software Engineer resume" />
+    <title>Jiaheng Li | Compact Resume</title>
+    <style>
+        :root {
+            --paper: #ffffff;
+            --canvas: #e9e7e3;
+            --ink: #202225;
+            --muted: #60656b;
+            --accent: #a6572e;
+            --rule: #d9d3cc;
+            --body-font: "Avenir Next", Avenir, "Helvetica Neue", sans-serif;
+            --display-font: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--canvas);
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--canvas);
+            font-family: var(--body-font);
+            font-size: 9.35pt;
+            line-height: 1.31;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: inherit;
+            text-decoration-color: rgba(166, 87, 46, 0.48);
+            text-underline-offset: 0.12em;
+        }
+
+        a:hover,
+        a:focus-visible {
+            color: var(--accent);
+            text-decoration-color: currentColor;
+        }
+
+        .review-bar {
+            width: min(210mm, calc(100% - 28px));
+            margin: 18px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            color: #4f4a45;
+            font-size: 12px;
+        }
+
+        .review-bar p {
+            margin: 0;
+            letter-spacing: 0.02em;
+        }
+
+        .print-button {
+            border: 1px solid #bcb7b1;
+            padding: 7px 12px;
+            color: #35312e;
+            background: rgba(255, 255, 255, 0.72);
+            font: 600 12px/1 var(--body-font);
+            cursor: pointer;
+        }
+
+        .print-button:hover,
+        .print-button:focus-visible {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: #fff;
+        }
+
+        .sheet {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 12px auto 36px;
+            padding: 12mm 15mm 9mm;
+            background: var(--paper);
+            box-shadow: 0 18px 50px rgba(35, 31, 27, 0.14);
+        }
+
+        .resume-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 12mm;
+            align-items: start;
+            margin-bottom: 4.8mm;
+        }
+
+        .identity h1 {
+            margin: 0;
+            color: var(--accent);
+            font-family: var(--display-font);
+            font-size: 25pt;
+            font-weight: 600;
+            line-height: 0.98;
+            letter-spacing: -0.025em;
+        }
+
+        .identity p {
+            margin: 2.2mm 0 0;
+            color: var(--muted);
+            font-size: 10pt;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
+
+        .contact {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            color: var(--muted);
+            font-size: 8.25pt;
+            line-height: 1.42;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .contact strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        section {
+            margin-top: 4.6mm;
+        }
+
+        section:first-of-type {
+            margin-top: 0;
+        }
+
+        h2 {
+            margin: 0 0 1.7mm;
+            color: var(--accent);
+            font-family: var(--display-font);
+            font-size: 13.3pt;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+
+        .profile {
+            margin: 0;
+            max-width: 184mm;
+        }
+
+        .job + .job {
+            margin-top: 3mm;
+        }
+
+        .job-heading,
+        .education-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 8mm;
+            align-items: baseline;
+        }
+
+        .job-heading h3,
+        .project h3,
+        .education-row h3 {
+            margin: 0;
+            font-size: 9.7pt;
+            line-height: 1.23;
+        }
+
+        .job-heading h3 span,
+        .education-row h3 span {
+            display: block;
+            font-size: 8.7pt;
+            font-weight: 600;
+        }
+
+        .date {
+            color: var(--muted);
+            font-size: 8.45pt;
+            white-space: nowrap;
+        }
+
+        ul {
+            margin: 1.35mm 0 0 4.8mm;
+            padding: 0;
+        }
+
+        li {
+            margin: 0.55mm 0;
+            padding-left: 0.7mm;
+        }
+
+        li::marker {
+            color: var(--accent);
+            font-size: 0.82em;
+        }
+
+        .project-list {
+            border-top: 1px solid var(--rule);
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 31mm minmax(0, 1fr);
+            gap: 4mm;
+            padding: 1.4mm 0 1.3mm;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .project h3 a {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .project p {
+            margin: 0;
+        }
+
+        .project-links {
+            display: block;
+            margin-top: 0.45mm;
+            color: var(--accent);
+            font-size: 8.15pt;
+            font-weight: 600;
+        }
+
+        .education-list {
+            display: grid;
+            gap: 1.8mm;
+        }
+
+        .education-row p {
+            margin: 0.25mm 0 0;
+            color: var(--muted);
+            font-size: 8.65pt;
+        }
+
+        .expertise {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 9mm;
+            row-gap: 1.45mm;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .expertise li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .expertise strong {
+            color: var(--ink);
+        }
+
+        .resume-footer {
+            display: block;
+            margin-top: 3.5mm;
+            padding-top: 2mm;
+            border-top: 1px solid var(--rule);
+            color: var(--muted);
+            font-size: 7.8pt;
+            line-height: 1.38;
+        }
+
+        .resume-footer span {
+            display: block;
+        }
+
+        .resume-footer span + span {
+            margin-top: 0.5mm;
+        }
+
+        .resume-footer strong {
+            color: var(--ink);
+        }
+
+        @media screen and (max-width: 850px) {
+            body {
+                font-size: 14px;
+            }
+
+            .review-bar {
+                width: calc(100% - 28px);
+            }
+
+            .sheet {
+                width: calc(100% - 28px);
+                min-height: 0;
+                margin-top: 12px;
+                padding: 28px 24px 24px;
+            }
+
+            .resume-header {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .contact {
+                text-align: left;
+                white-space: normal;
+            }
+
+            .job-heading,
+            .education-row {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                gap: 4px;
+                padding: 10px 0;
+            }
+
+            .expertise {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                min-height: 0;
+                height: auto;
+                background: #fff;
+            }
+
+            body {
+                font-size: 9.1pt;
+                line-height: 1.27;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .review-bar {
+                display: none;
+            }
+
+            .sheet {
+                width: 210mm;
+                min-height: 0;
+                height: auto;
+                margin: 0;
+                padding: 10mm 14mm 7mm;
+                box-shadow: none;
+                overflow: visible;
+            }
+
+            .resume-header {
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 12mm;
+                align-items: start;
+                margin-bottom: 4.2mm;
+            }
+
+            .contact {
+                text-align: right;
+                white-space: nowrap;
+            }
+
+            .job-heading,
+            .education-row {
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 8mm;
+            }
+
+            .project {
+                grid-template-columns: 31mm minmax(0, 1fr);
+                gap: 4mm;
+                padding: 1.4mm 0 1.3mm;
+            }
+
+            .expertise {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            section {
+                margin-top: 4mm;
+            }
+
+            .job + .job {
+                margin-top: 2.6mm;
+            }
+
+            .resume-footer {
+                margin-top: 3mm;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="review-bar" aria-label="Prototype controls">
+    <p>Compact resume concept · original resume unchanged</p>
+    <button class="print-button" type="button" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<main class="sheet">
+    <header class="resume-header">
+        <div class="identity">
+            <h1>Jiaheng Li</h1>
+            <p>Full-Stack Software Engineer</p>
+        </div>
+        <ul class="contact" aria-label="Contact details">
+            <li><a href="mailto:odell.lijiaheng@gmail.com">odell.lijiaheng@gmail.com</a> · <a href="tel:+64272959309">027 295 9309</a></li>
+            <li><a href="https://ode1l.github.io/resume">Portfolio</a> · <a href="https://github.com/Ode1l">GitHub</a> · Auckland, New Zealand</li>
+            <li><strong>Open Work Visa</strong> · valid until 25 February 2029 · no sponsorship required</li>
+            <li>Available immediately · open to relocate</li>
+        </ul>
+    </header>
+
+    <section aria-labelledby="profile-heading">
+        <h2 id="profile-heading">Profile</h2>
+        <p class="profile">Full-stack software developer with three years of commercial experience across finance SaaS and structural-engineering software. Builds C#/.NET and Java/Spring backends, React/TypeScript interfaces, and SQL-backed systems, with end-to-end ownership from requirements and design through testing, CI/CD, and release. Experienced translating complex domain workflows into maintainable software for technical and non-technical stakeholders.</p>
+    </section>
+
+    <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Professional Experience</h2>
+
+        <article class="job">
+            <div class="job-heading">
+                <h3>Skyline Consulting Engineers Limited<span>Part-time Full-stack Software Developer · Auckland</span></h3>
+                <div class="date">Oct 2024 – Dec 2025</div>
+            </div>
+            <ul>
+                <li>Developed and maintained full-stack structural-engineering software using C#/.NET, React/TypeScript, and PostgreSQL.</li>
+                <li>Worked with structural engineers to clarify calculation workflows, define validation rules, test results, and deliver reliable releases.</li>
+            </ul>
+        </article>
+
+        <article class="job">
+            <div class="job-heading">
+                <h3>Yonyou Network Technology Co., Ltd.<span>Junior Backend Developer (Java) · Zhengzhou, China</span></h3>
+                <div class="date">Mar 2022 – Dec 2023</div>
+            </div>
+            <ul>
+                <li>Built Java/Spring services and REST integrations for a finance-focused, multi-tenant SaaS ERP platform using Oracle, PostgreSQL, MongoDB, and Kafka.</li>
+                <li>Developed a separate migration service handling up to approximately one million records daily through incremental extraction, data transformation, MyBatis/MyBatis-Plus, and parallel processing.</li>
+                <li>Delivered a Spring Boot authentication gateway and Kafka message-push module with thread-pool processing for workloads above 100,000 records; debugged faults across API, service, database, and integration layers.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Engineering Work</h2>
+        <div class="project-list">
+            <article class="project">
+                <h3><a href="https://structledger.com">StructLedger</a></h3>
+                <p>Released beam-calculation SaaS with .NET calculation APIs and PostgreSQL on Railway, a React/TypeScript frontend on Cloudflare, Google sign-in, and CI/CD.
+                    <span class="project-links"><a href="https://structledger.com">Live product</a></span>
+                </p>
+            </article>
+            <article class="project">
+                <h3><a href="https://github.com/Ode1l/p2p-lockstep-kit">p2p-lockstep-kit</a></h3>
+                <p>TypeScript/WebRTC toolkit for deterministic browser games, with state synchronisation, reconnect recovery, an AI build skill, and multiplayer Mahjong support.
+                    <span class="project-links"><a href="https://github.com/Ode1l/p2p-lockstep-kit">GitHub</a> · <a href="https://gomoku.jiahengli.xyz">Gomoku</a> · <a href="https://chess.jiahengli.xyz">Chess</a> · <a href="https://xiangqi.jiahengli.xyz">Xiangqi</a> · <a href="https://mahjong.jiahengli.xyz">Mahjong</a></span>
+                </p>
+            </article>
+            <article class="project">
+                <h3><a href="https://github.com/Ode1l/NX-Cast">NX-Cast</a></h3>
+                <p>C/libnx media receiver for Nintendo Switch homebrew, supporting DLNA, IPTV, and AirPlay 2 with hardware-accelerated libmpv playback and automated release builds.
+                    <span class="project-links"><a href="https://github.com/Ode1l/NX-Cast">GitHub</a> · <a href="https://ode1l.github.io/resume/projects/nx-cast.html">Technical notes</a></span>
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="education-list">
+            <div class="education-row">
+                <div>
+                    <h3>Master of Information Technology</h3>
+                    <p>University of Auckland</p>
+                </div>
+                <div class="date">Jul 2024 – Nov 2025</div>
+            </div>
+            <div class="education-row">
+                <div>
+                    <h3>Bachelor of Network Engineering</h3>
+                    <p>Henan University</p>
+                </div>
+                <div class="date">Sep 2018 – Jun 2022</div>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="expertise-heading">
+        <h2 id="expertise-heading">Core Expertise</h2>
+        <ul class="expertise">
+            <li><strong>Backend:</strong> C#, .NET 8–10, ASP.NET Core, Java, Spring Boot, REST APIs</li>
+            <li><strong>Frontend:</strong> React 18/19, TypeScript, Next.js, Vite, HTML, CSS</li>
+            <li><strong>Data &amp; Cloud:</strong> SQL, PostgreSQL, Oracle, MongoDB, AWS, Azure, Docker, Kubernetes</li>
+            <li><strong>Delivery &amp; AI:</strong> Git, CI/CD, GitHub Actions, xUnit, RAG, MCP, agent development</li>
+        </ul>
+    </section>
+
+    <footer class="resume-footer">
+        <span><strong>Professional Reference:</strong> Hongchang Zhang, Director, Skyline Consulting Engineers Limited · <a href="tel:+64291286676">029 128 6676</a></span>
+        <span><a href="mailto:skyline.consulting.96@gmail.com">skyline.consulting.96@gmail.com</a> · <a href="https://ode1l.github.io/resume/references/skyline-reference-letter.html">Recommendation letter</a></span>
+    </footer>
+</main>
+</body>
+</html>
