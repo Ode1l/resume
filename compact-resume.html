@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Jiaheng Li - Full-Stack Software Engineer resume" />
     <title>Jiaheng Li | Compact Resume</title>
+    <script>
+        if (new URLSearchParams(window.location.search).get("print") === "paper") {
+            document.documentElement.classList.add("paper-print");
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll("a").forEach((link) => link.removeAttribute("href"));
+            });
+        }
+    </script>
     <style>
         :root {
             --paper: #ffffff;
@@ -25,6 +33,15 @@
             background: var(--canvas);
         }
 
+        html.paper-print {
+            --paper: #ffffff;
+            --canvas: #ffffff;
+            --ink: #000000;
+            --muted: #262626;
+            --accent: #000000;
+            --rule: #8a8a8a;
+        }
+
         body {
             margin: 0;
             color: var(--ink);
@@ -37,8 +54,10 @@
         }
 
         a {
-            color: inherit;
-            text-decoration-color: rgba(166, 87, 46, 0.48);
+            color: #1d4ed8;
+            text-decoration: underline;
+            text-decoration-color: currentColor;
+            text-decoration-thickness: 0.7pt;
             text-underline-offset: 0.12em;
         }
 
@@ -215,7 +234,7 @@
         }
 
         .project h3 a {
-            color: var(--ink);
+            color: #1d4ed8;
             font-weight: 700;
         }
 
@@ -261,6 +280,10 @@
             color: var(--ink);
         }
 
+        .expertise + .profile {
+            margin-top: 2.5mm;
+        }
+
         .resume-footer {
             display: block;
             margin-top: 3.5mm;
@@ -281,6 +304,43 @@
 
         .resume-footer strong {
             color: var(--ink);
+        }
+
+        .printed-urls {
+            display: none;
+        }
+
+        html.paper-print .printed-urls {
+            display: block;
+            margin-top: 2.8mm;
+            padding-top: 1.8mm;
+            border-top: 1px solid var(--rule);
+        }
+
+        .printed-urls h2 {
+            margin-bottom: 1.1mm;
+            font-size: 9.4pt;
+        }
+
+        .printed-url-list {
+            columns: 2;
+            column-gap: 6mm;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 6.55pt;
+            line-height: 1.2;
+            overflow-wrap: anywhere;
+        }
+
+        .printed-url-list li {
+            break-inside: avoid;
+            margin: 0 0 0.55mm;
+            padding: 0;
+        }
+
+        .printed-url-list strong {
+            font-weight: 700;
         }
 
         @media screen and (max-width: 850px) {
@@ -402,7 +462,59 @@
             }
 
             a {
-                text-decoration: none;
+                color: #1d4ed8;
+                text-decoration: underline;
+                text-decoration-color: currentColor;
+                text-decoration-thickness: 0.7pt;
+            }
+
+            html.paper-print,
+            html.paper-print body {
+                color: #000;
+                background: #fff;
+                print-color-adjust: economy;
+                -webkit-print-color-adjust: economy;
+            }
+
+            html.paper-print body {
+                font-size: 8.72pt;
+                line-height: 1.23;
+            }
+
+            html.paper-print .sheet {
+                padding: 8mm 12mm 5.5mm;
+            }
+
+            html.paper-print .identity h1,
+            html.paper-print h2,
+            html.paper-print a,
+            html.paper-print li::marker {
+                color: #000;
+            }
+
+            html.paper-print section {
+                margin-top: 3.45mm;
+            }
+
+            html.paper-print .resume-header {
+                margin-bottom: 3.6mm;
+            }
+
+            html.paper-print .job + .job {
+                margin-top: 2.25mm;
+            }
+
+            html.paper-print .project {
+                padding: 1.05mm 0;
+            }
+
+            html.paper-print .project-links {
+                display: none;
+            }
+
+            html.paper-print .resume-footer {
+                margin-top: 2.35mm;
+                padding-top: 1.55mm;
             }
         }
     </style>
@@ -427,9 +539,17 @@
         </ul>
     </header>
 
-    <section aria-labelledby="profile-heading">
-        <h2 id="profile-heading">Profile</h2>
-        <p class="profile">Full-stack software developer with three years of commercial experience across finance SaaS and structural-engineering software. Builds C#/.NET and Java/Spring backends, React/TypeScript interfaces, and SQL-backed systems, with end-to-end ownership from requirements and design through testing, CI/CD, and release. Experienced translating complex domain workflows into maintainable software for technical and non-technical stakeholders.</p>
+    <section aria-labelledby="expertise-heading">
+        <h2 id="expertise-heading">At a Glance</h2>
+        <ul class="expertise">
+            <li><strong>Target Role:</strong> Full-Stack Software Developer</li>
+            <li><strong>Experience:</strong> 3 years · Java: 2 years · .NET: ~1.5 years</li>
+            <li><strong>Backend:</strong> C#/.NET · Java/Spring Boot · REST APIs</li>
+            <li><strong>Frontend:</strong> React · TypeScript · HTML/CSS/JavaScript</li>
+            <li><strong>Databases:</strong> SQL · PostgreSQL · Oracle · MongoDB</li>
+            <li><strong>Delivery:</strong> Git · GitHub Actions · Docker · CI/CD</li>
+        </ul>
+        <p class="profile">Delivers finance SaaS, structural-engineering software, and commercial websites, turning client requirements into production systems through implementation, testing, and release.</p>
     </section>
 
     <section aria-labelledby="experience-heading">
@@ -437,12 +557,32 @@
 
         <article class="job">
             <div class="job-heading">
+                <h3>Freelance Web Developer<span>Independent client projects</span></h3>
+            </div>
+            <ul>
+                <li><strong>Haven Build Group</strong> (<a href="https://havenbuildgroup.co.nz">havenbuildgroup.co.nz</a>): Delivered a responsive React/TypeScript website on Vercel, guiding a non-technical client through requirements and content planning.</li>
+                <li><strong>Bird &amp; Yang</strong> (<a href="https://www.birdyang.co.nz">birdyang.co.nz</a>): Improving the website's visual design, UI, and animations using native HTML, CSS, and JavaScript.</li>
+            </ul>
+        </article>
+
+        <article class="job">
+            <div class="job-heading">
                 <h3>Skyline Consulting Engineers Limited<span>Part-time Full-stack Software Developer · Auckland</span></h3>
                 <div class="date">Oct 2024 – Dec 2025</div>
             </div>
             <ul>
-                <li>Developed and maintained full-stack structural-engineering software using C#/.NET, React/TypeScript, and PostgreSQL.</li>
-                <li>Worked with structural engineers to clarify calculation workflows, define validation rules, test results, and deliver reliable releases.</li>
+                <li>Converted an Excel-based beam-calculation workflow into a structured C#/.NET, React/TypeScript, and PostgreSQL system, giving engineers a maintainable foundation for calculation work.</li>
+                <li>Clarified inputs, outputs, and validation rules with structural engineers, then verified results through analytical benchmarks, equilibrium checks, and stakeholder testing so releases matched engineering expectations.</li>
+            </ul>
+        </article>
+
+        <article class="job">
+            <div class="job-heading">
+                <h3>Optimal Drainage &amp; Traffic Services Limited<span>Part-time IT Support · Auckland</span></h3>
+                <div class="date">Jun 2024 – Oct 2024</div>
+            </div>
+            <ul>
+                <li>Managed computers, user accounts, and application access for a 10-person team; organised digital evidence for management and legal advisers.</li>
             </ul>
         </article>
 
@@ -452,9 +592,9 @@
                 <div class="date">Mar 2022 – Dec 2023</div>
             </div>
             <ul>
-                <li>Built Java/Spring services and REST integrations for a finance-focused, multi-tenant SaaS ERP platform using Oracle, PostgreSQL, MongoDB, and Kafka.</li>
-                <li>Developed a separate migration service handling up to approximately one million records daily through incremental extraction, data transformation, MyBatis/MyBatis-Plus, and parallel processing.</li>
-                <li>Delivered a Spring Boot authentication gateway and Kafka message-push module with thread-pool processing for workloads above 100,000 records; debugged faults across API, service, database, and integration layers.</li>
+                <li>Built Java/Spring services, accounting forms, and REST integrations for a multi-tenant finance SaaS ERP, supporting cross-system workflows across Oracle, PostgreSQL, MongoDB, and Kafka.</li>
+                <li>Delivered a separate migration service processing up to approximately one million records daily through incremental extraction, data transformation, MyBatis/MyBatis-Plus, and parallel processing.</li>
+                <li>Built a Spring Boot gateway that enabled quick login between enterprise modules and a Kafka message-push module that handled workloads above 100,000 records through thread-pool processing.</li>
             </ul>
         </article>
     </section>
@@ -464,19 +604,19 @@
         <div class="project-list">
             <article class="project">
                 <h3><a href="https://structledger.com">StructLedger</a></h3>
-                <p>Released beam-calculation SaaS with .NET calculation APIs and PostgreSQL on Railway, a React/TypeScript frontend on Cloudflare, Google sign-in, and CI/CD.
+                <p>Released a production beam-calculation SaaS that makes engineering calculations available through a web workflow, with .NET/PostgreSQL on Railway, React/TypeScript on Cloudflare, Google sign-in, and CI/CD.
                     <span class="project-links"><a href="https://structledger.com">Live product</a></span>
                 </p>
             </article>
             <article class="project">
                 <h3><a href="https://github.com/Ode1l/p2p-lockstep-kit">p2p-lockstep-kit</a></h3>
-                <p>TypeScript/WebRTC toolkit for deterministic browser games, with state synchronisation, reconnect recovery, an AI build skill, and multiplayer Mahjong support.
+                <p>Built a reusable TypeScript/WebRTC session toolkit now powering four live browser games, with deterministic synchronisation, reconnect recovery, an AI build skill, and multiplayer Mahjong.
                     <span class="project-links"><a href="https://github.com/Ode1l/p2p-lockstep-kit">GitHub</a> · <a href="https://gomoku.jiahengli.xyz">Gomoku</a> · <a href="https://chess.jiahengli.xyz">Chess</a> · <a href="https://xiangqi.jiahengli.xyz">Xiangqi</a> · <a href="https://mahjong.jiahengli.xyz">Mahjong</a></span>
                 </p>
             </article>
             <article class="project">
                 <h3><a href="https://github.com/Ode1l/NX-Cast">NX-Cast</a></h3>
-                <p>C/libnx media receiver for Nintendo Switch homebrew, supporting DLNA, IPTV, and AirPlay 2 with hardware-accelerated libmpv playback and automated release builds.
+                <p>Turned a Nintendo Switch into a media receiver for TVs without native casting, supporting DLNA, IPTV, and AirPlay 2 through C/libnx, hardware-accelerated libmpv playback, and automated releases.
                     <span class="project-links"><a href="https://github.com/Ode1l/NX-Cast">GitHub</a> · <a href="https://ode1l.github.io/resume/projects/nx-cast.html">Technical notes</a></span>
                 </p>
             </article>
@@ -503,19 +643,22 @@
         </div>
     </section>
 
-    <section aria-labelledby="expertise-heading">
-        <h2 id="expertise-heading">Core Expertise</h2>
-        <ul class="expertise">
-            <li><strong>Backend:</strong> C#, .NET 8–10, ASP.NET Core, Java, Spring Boot, REST APIs</li>
-            <li><strong>Frontend:</strong> React 18/19, TypeScript, Next.js, Vite, HTML, CSS</li>
-            <li><strong>Data &amp; Cloud:</strong> SQL, PostgreSQL, Oracle, MongoDB, AWS, Azure, Docker, Kubernetes</li>
-            <li><strong>Delivery &amp; AI:</strong> Git, CI/CD, GitHub Actions, xUnit, RAG, MCP, agent development</li>
+    <section class="printed-urls" aria-labelledby="printed-urls-heading">
+        <h2 id="printed-urls-heading">Project &amp; Reference URLs</h2>
+        <ul class="printed-url-list">
+            <li><strong>Portfolio:</strong> https://ode1l.github.io/resume</li>
+            <li><strong>GitHub:</strong> https://github.com/Ode1l</li>
+            <li><strong>StructLedger:</strong> https://structledger.com</li>
+            <li><strong>p2p-lockstep-kit:</strong> https://github.com/Ode1l/p2p-lockstep-kit</li>
+            <li><strong>Live games:</strong> https://gomoku.jiahengli.xyz · https://chess.jiahengli.xyz · https://xiangqi.jiahengli.xyz · https://mahjong.jiahengli.xyz</li>
+            <li><strong>NX-Cast:</strong> https://github.com/Ode1l/NX-Cast</li>
+            <li><strong>NX-Cast notes:</strong> https://ode1l.github.io/resume/projects/nx-cast.html</li>
+            <li><strong>Recommendation:</strong> https://ode1l.github.io/resume/references/skyline-reference-letter.html</li>
         </ul>
     </section>
 
     <footer class="resume-footer">
-        <span><strong>Professional Reference:</strong> Hongchang Zhang, Director, Skyline Consulting Engineers Limited · <a href="tel:+64291286676">029 128 6676</a></span>
-        <span><a href="mailto:skyline.consulting.96@gmail.com">skyline.consulting.96@gmail.com</a> · <a href="https://ode1l.github.io/resume/references/skyline-reference-letter.html">Recommendation letter</a></span>
+        <span><strong>Professional Reference:</strong> Hongchang Zhang, Director, Skyline Consulting Engineers Limited · <a href="https://ode1l.github.io/resume/references/skyline-reference-letter.html">Recommendation letter</a></span>
     </footer>
 </main>
 </body>
