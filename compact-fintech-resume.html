@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jiaheng Li | Full Stack Software Engineer</title>
+<style>
+:root{--ink:#202225;--muted:#60656b;--accent:#a6572e;--rule:#d9d3cc}
+*{box-sizing:border-box}
+body{margin:0;background:#e9e7e3;color:var(--ink);font:10pt/1.4 "Avenir Next",Avenir,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1d4ed8;text-decoration:underline;text-underline-offset:0.12em;text-decoration-thickness:0.7pt}
+.sheet{width:210mm;min-height:297mm;margin:18px auto;padding:13mm 15mm 11mm;background:white;box-shadow:0 18px 50px #231f1b24}
+header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7mm;align-items:start;margin-bottom:7mm}
+h1{margin:0;color:var(--accent);font:600 25pt/0.98 "Iowan Old Style","Palatino Linotype",Georgia,serif;letter-spacing:-0.025em}
+.title{margin:2.3mm 0 0;color:var(--muted);font-size:10pt;font-weight:600}
+.contact{text-align:right;font-size:8pt;line-height:1.5;color:var(--muted)}.contact p{margin:0}
+section{margin-top:7mm}section:first-of-type{margin-top:0}
+h2{margin:0 0 2.4mm;color:var(--accent);font:600 14pt/1.1 "Iowan Old Style","Palatino Linotype",Georgia,serif;letter-spacing:-0.01em}
+.skills{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;row-gap:2mm;margin:0;padding:0;list-style:none;font-size:9.2pt}
+.job+.job{margin-top:4mm}.job-heading{display:grid;grid-template-columns:1fr auto;gap:5mm;align-items:baseline}
+h3{margin:0;font-size:10pt;line-height:1.3;font-weight:600}
+.role{color:var(--muted);font-size:9pt;margin:0.5mm 0 1.5mm}.date{color:var(--muted);font-size:8.7pt;white-space:nowrap}.description{margin:0}
+.project-list{border-top:1px solid var(--rule)}
+.project{display:grid;grid-template-columns:35mm 1fr;gap:4mm;padding:3mm 0;border-bottom:1px solid var(--rule)}
+.project p{margin:0;font-size:9.6pt}.project small{display:block;font-size:8.3pt;color:var(--muted);margin-top:0.7mm}
+.education{display:grid;gap:2.3mm;font-size:9.3pt}.education p{margin:0}
+footer{border-top:1px solid var(--rule);margin-top:5mm;padding-top:2mm;color:var(--muted);font-size:8.5pt}
+@page{size:A4;margin:0}
+@media print{body{background:white;print-color-adjust:exact;-webkit-print-color-adjust:exact}.sheet{margin:0;box-shadow:none}}
+@media screen and (max-width:800px){.sheet{width:100%;min-height:0;padding:24px;margin:0}header{grid-template-columns:1fr}.contact{text-align:left}.skills{grid-template-columns:1fr}.project{grid-template-columns:1fr;gap:6px}}
+</style>
+</head>
+<body><main class="sheet">
+<header>
+<div><h1>Jiaheng Li</h1><p class="title">Full Stack Software Engineer</p></div>
+<div class="contact">
+<p><a href="mailto:odell.lijiaheng@gmail.com">odell.lijiaheng@gmail.com</a></p>
+<p><a href="https://ode1l.github.io/resume">Portfolio</a> &middot; <a href="https://github.com/Ode1l">GitHub</a> &middot; Auckland, NZ</p>
+<p>Open Work Visa to 25 Feb 2029 &middot; No sponsorship required</p>
+<p>Available immediately &middot; Open to relocate</p>
+</div>
+</header>
+<section>
+<h2>At a Glance</h2>
+<ul class="skills">
+<li><strong>Experience:</strong> 3 years commercial development</li>
+<li><strong>Languages:</strong> Go &middot; Python &middot; Java &middot; C# &middot; C/C++</li>
+<li><strong>Backend:</strong> Spring Boot &middot; .NET &middot; REST APIs</li>
+<li><strong>Frontend:</strong> React &middot; TypeScript &middot; HTML/CSS/JS</li>
+<li><strong>Data &amp; Delivery:</strong> SQL &middot; PostgreSQL &middot; Git &middot; CI/CD</li>
+<li><strong>Systems:</strong> P2P &middot; Concurrency &middot; Blockchain principles</li>
+</ul>
+</section>
+<section>
+<h2>Professional Experience</h2>
+<article class="job">
+<div class="job-heading"><h3>Skyline Consulting Engineers Limited</h3><span class="date">Oct 2024 - Dec 2025</span></div>
+<p class="role">Part-time Full-stack Developer &middot; Auckland</p>
+<p class="description">Turned structural engineers' calculation workflows into C#/.NET, React/TypeScript and PostgreSQL software. Clarified requirements with engineers and checked calculation results against analytical benchmarks.</p>
+</article>
+<article class="job">
+<div class="job-heading"><h3>Yonyou Network Technology Co., Ltd.</h3><span class="date">Mar 2022 - Dec 2023</span></div>
+<p class="role">Java Backend Developer &middot; Zhengzhou, China</p>
+<p class="description">Developed Java/Spring services, REST integrations and accounting forms for a finance SaaS ERP. Built a quick-login gateway and refactored message processing for workloads above 100,000 records, using Kafka, MyBatis and thread pools.</p>
+</article>
+</section>
+<section>
+<h2>Projects</h2>
+<div class="project-list">
+<article class="project">
+<div><h3><a href="https://github.com/Ode1l/Go-Kademlia-DHT">Go Kademlia DHT</a></h3><small>Go &middot; Undergraduate thesis</small></div>
+<p>Implemented all four peer-discovery RPCs, XOR-distance routing and concurrent queries; integrated the DHT with a torrent-download session.</p>
+</article>
+<article class="project">
+<div><h3><a href="https://github.com/Ode1l/Total-Order-Multicast">Total-Order Multicast</a></h3><small>C# &middot; Coursework</small></div>
+<p>Implemented and tested consistent message-delivery ordering across five processes under simulated network delays.</p>
+</article>
+<article class="project">
+<div><h3><a href="https://github.com/Ode1l/p2p-lockstep-kit">P2P Lockstep Kit</a></h3><small>TypeScript &middot; WebRTC</small></div>
+<p>Built a reusable peer-to-peer game toolkit with deterministic synchronisation and reconnect recovery, powering live games including multiplayer Mahjong.</p>
+</article>
+<article class="project">
+<div><h3><a href="https://github.com/Ode1l/Short-Blockchain-Decentralized-PKI">Blockchain PKI</a></h3><small>Postgraduate research</small></div>
+<p>Explored lightweight blockchain-based certificate issuance, validation and revocation, including smart-contract concepts; produced a coursework report.</p>
+</article>
+<article class="project">
+<div><h3><a href="https://github.com/Ode1l/NX-Cast">NX-Cast</a></h3><small>C/C++ &middot; Embedded systems</small></div>
+<p>Turned a Nintendo Switch into a media receiver supporting DLNA, IPTV and AirPlay 2, integrating FFmpeg and libmpv.</p>
+</article>
+</div>
+</section>
+<section>
+<h2>Education</h2>
+<div class="education">
+<p><strong>Master of Information Technology</strong> &middot; University of Auckland &middot; Nov 2025</p>
+<p><strong>Bachelor of Network Engineering</strong> &middot; Henan University &middot; Jun 2022</p>
+</div>
+</section>
+<footer>Former employers are willing to provide references.</footer>
+</main></body>
+</html>
