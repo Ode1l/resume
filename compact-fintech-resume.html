@@ -13,17 +13,18 @@ header{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7mm;align-items
 h1{margin:0;color:var(--accent);font:600 25pt/0.98 "Iowan Old Style","Palatino Linotype",Georgia,serif;letter-spacing:-0.025em}
 .title{margin:2.3mm 0 0;color:var(--muted);font-size:10pt;font-weight:600}
 .contact{text-align:right;font-size:8pt;line-height:1.5;color:var(--muted)}.contact p{margin:0}
-section{margin-top:6mm}section:first-of-type{margin-top:0}
+section{margin-top:5mm}section:first-of-type{margin-top:0}
 h2{margin:0 0 2.4mm;color:var(--accent);font:600 14pt/1.1 "Iowan Old Style","Palatino Linotype",Georgia,serif;letter-spacing:-0.01em}
 .skills{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;row-gap:2mm;margin:0;padding:0;list-style:none;font-size:9.2pt}
 .job+.job{margin-top:4mm}.job-heading{display:grid;grid-template-columns:1fr auto;gap:5mm;align-items:baseline}
 h3{margin:0;font-size:10pt;line-height:1.3;font-weight:600}
 .role{color:var(--muted);font-size:9pt;margin:0.5mm 0 1.5mm}.date{color:var(--muted);font-size:8.7pt;white-space:nowrap}.description{margin:0}
 .project-list{border-top:1px solid var(--rule)}
-.project{display:grid;grid-template-columns:35mm 1fr;gap:4mm;padding:2.5mm 0;border-bottom:1px solid var(--rule)}
+.project{display:grid;grid-template-columns:35mm 1fr;gap:4mm;padding:2mm 0;border-bottom:1px solid var(--rule)}
 .project p{margin:0;font-size:9.6pt}.project small{display:block;font-size:8.3pt;color:var(--muted);margin-top:0.7mm}
 .education{display:grid;gap:2.3mm;font-size:9.3pt}.education p{margin:0}
-footer{border-top:1px solid var(--rule);margin-top:5mm;padding-top:2mm;color:var(--muted);font-size:8.5pt}
+.coursework{font-size:8.7pt;color:var(--muted)}
+footer{border-top:1px solid var(--rule);margin-top:3mm;padding-top:2mm;color:var(--muted);font-size:8.5pt}
 @page{size:A4;margin:0}
 @media print{body{background:white;print-color-adjust:exact;-webkit-print-color-adjust:exact}.sheet{margin:0;box-shadow:none}}
 @media screen and (max-width:800px){.sheet{width:100%;min-height:0;padding:24px;margin:0}header{grid-template-columns:1fr}.contact{text-align:left}.skills{grid-template-columns:1fr}.project{grid-template-columns:1fr;gap:6px}}
@@ -71,7 +72,7 @@ footer{border-top:1px solid var(--rule);margin-top:5mm;padding-top:2mm;color:var
 <p>Implemented PING, FIND_NODE, GET_PEERS and ANNOUNCE_PEER in Go, with XOR-distance routing and concurrent queries. Integrated the DHT with a torrent-download session and documented peer discovery, packet captures and an Ubuntu torrent download.</p>
 </article>
 <article class="project">
-<div><h3><a href="https://github.com/Ode1l/Short-Blockchain-Decentralized-PKI">Blockchain PKI</a></h3><small>Postgraduate research</small></div>
+<div><h3><a href="https://github.com/Ode1l/Short-Blockchain-Decentralized-PKI">Blockchain PKI</a></h3><small>COMPSCI 726 report</small></div>
 <p>Explored lightweight blockchain-based certificate issuance, validation and revocation, including smart-contract concepts; produced a coursework report.</p>
 </article>
 <article class="project">
@@ -83,7 +84,7 @@ footer{border-top:1px solid var(--rule);margin-top:5mm;padding-top:2mm;color:var
 <p>Turned a Nintendo Switch into a media receiver supporting DLNA, IPTV and AirPlay 2. Cross-compiled and integrated FFmpeg/libmpv, using event loops, multithreading and state machines to manage playback within embedded memory and CPU constraints.</p>
 </article>
 <article class="project">
-<div><h3><a href="https://github.com/Ode1l/Total-Order-Multicast">Total-Order Multicast</a></h3><small>C# &middot; Coursework</small></div>
+<div><h3><a href="https://github.com/Ode1l/Total-Order-Multicast">Total-Order Multicast</a></h3><small>COMPSCI 711 assignment &middot; C#</small></div>
 <p>Implemented and tested consistent message-delivery ordering across five processes under simulated network delays.</p>
 </article>
 </div>
@@ -92,6 +93,7 @@ footer{border-top:1px solid var(--rule);margin-top:5mm;padding-top:2mm;color:var
 <h2>Education</h2>
 <div class="education">
 <p><strong>Master of Information Technology</strong> &middot; University of Auckland &middot; Nov 2025</p>
+<p class="coursework">Completed COMPSCI 726: Network Defence and Countermeasures, and COMPSCI 711: Parallel and Distributed Computing.</p>
 <p><strong>Bachelor of Network Engineering</strong> &middot; Henan University &middot; Jun 2022</p>
 </div>
 </section>
