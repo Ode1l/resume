@@ -7,7 +7,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "compact-fintech-resume.html"
-OUT = ROOT / "output/pdf/Jiaheng Li Full Stack Software Engineer Resume 2026-10-09.pdf"
+OUT = ROOT / "output/pdf/Jiaheng Li Full Stack Software Engineer Resume 2026-10-12.pdf"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 RUNTIME = Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies"
 NODE = RUNTIME / "node/bin/node"
